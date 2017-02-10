@@ -1,0 +1,29 @@
+{
+  "res": 1,
+  "msg": "成功",
+  "data": [
+    {
+      "id":1,
+    "student_id": "20150101",
+    "name": "张三",
+    "class_type": "1"
+    },
+    {
+      "id":11,
+    "student_id": "20150102",
+    "name": "李四",
+    "class_type": "1"
+    },
+    {
+      "id":11,
+      "student_id": "20150103",
+      "name": "王五",
+      "class_type": "2"
+    },{
+      "id":11,
+      "student_id": "20150104",
+      "name": "黄六",
+      "class_type": "1"
+    }
+    ]
+  }

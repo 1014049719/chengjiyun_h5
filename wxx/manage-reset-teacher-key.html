@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>重置密码</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+                        <p class="page_title">系统管理 - 重置密码</p>
+           
+                                            <div class="content">
+
+                                                    <div>
+                                                        <div>若教师或学生需要你重设密码，在确认其真实身份的情况下：<br> 教师：输入其“账号”，然后点击“重置”，
+                                                            <br> 学生：输入其“学号”或“账号”，然后点击“重置”。
+                                                            <br> 一般情况下不建议输入姓名重置，易出现重名情况。
+                                                            <br> 重置后，该用户的密码变为123，请用户尽快登录并修改密码。
+                                                        </div><br>
+                                                        <div class="form-item form-type-textfield form-item-username">
+                                                            <label for="edit-username">账号 </label>
+                                                            <input type="text" id="edit-username" name="username" value="" size="60" maxlength="128" class="form-text">
+                                                        </div>
+                                                        <div class="form-item form-type-textfield form-item-school-id">
+                                                            <label for="edit-school-id">学号 </label>
+                                                            <input type="text" id="edit-school-id" name="school_id" value="" size="60" maxlength="128" class="form-text">
+                                                        </div>
+                                                        <div class="form-item form-type-textfield form-item-realname">
+                                                            <label for="edit-realname">姓名 </label>
+                                                            <input type="text" id="edit-realname" name="realname" value="" size="60" maxlength="128" class="form-text">
+                                                        </div>
+                                                        <div><input type="button" class="form-submit" value="重置" id="reset"></div>
+                                                        <!--<input-->
+                                                            <!--style="display:none" type="submit" id="edit-submit" name="op" value="重置"-->
+                                                            <!--class="form-submit">-->
+                                                        <!--请该用户尽快登录并修改密码，建议他在个人设置中输入常用邮箱，便于以后自主找回密码。<br><img src="./系统管理 - 重置密码 _ 初中演示环境_files/password_tips.jpg"><br><br>-->
+                                                            <!--<div-->
+                                                                <!--style="height:1px;border-bottom: 1px solid #D6D6D6;"></div>-->
+                                                    <!--<h2>下载初始密码:</h2>-->
+                                                    <!--<p>下载用户在创建时设定的初始密码，便于分发和通知用户登录。如果该用户已经自行修改密码，则新的密码不会出现在此表中。</p>-->
+                                                    <!--<a class="button" href="http://chengjiyun.com/democz/index.php?q=school-users/download-init-password/3207/baPI6pD_AT9T45QskMEG8&#45;&#45;KeiUh2HnLAZuSSfOH5Vc/5">下载老师初始密码</a><br><br>-->
+                                                    <!--<a-->
+                                                        <!--class="button" href="http://chengjiyun.com/democz/index.php?q=school-users/download-init-password/3207/baPI6pD_AT9T45QskMEG8&#45;&#45;KeiUh2HnLAZuSSfOH5Vc/3">下载学生初始密码</a><br><br>-->
+                                                        <!--<div style="height:1px;border-bottom: 1px solid #D6D6D6;"></div><br>-->
+                                                        <!--<div>-->
+                                                            <!--<h2>管理员联系方式:</h2>-->
+                                                            <!--请填写您的联系方式，这些内容会出现在学生教师忘记密码时的协助信息中，当他们无法自助重设密码时，可以通过这个方式联系您给予协助。-->
+                                                        <!--</div>-->
+                                                        <!--<div class="container-inline">-->
+                                                            <!--<div class="form-item form-type-textfield form-item-admin-name">-->
+                                                                <!--<label for="edit-admin-name">姓名 </label>-->
+                                                                <!--<input type="text" id="edit-admin-name" name="admin-name" value="李老师" size="20" maxlength="128" class="form-text">-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="container-inline">-->
+                                                            <!--<div class="form-item form-type-textfield form-item-admin-mobile">-->
+                                                                <!--<label for="edit-admin-mobile">手机 </label>-->
+                                                                <!--<input type="text" id="edit-admin-mobile" name="admin-mobile" value="13700000000" size="20" maxlength="128" class="form-text">-->
+                                                            <!--</div>-->
+                                                        <!--</div><input type="submit" id="edit-save" name="op" value="保存" class="form-submit">-->
+                                                        <!--<input-->
+                                                            <!--type="hidden" name="form_build_id" value="form-QGA7tywgWZd6Sxg_KQI3k67JNbeTKxHvJdb8JVLYgI0">-->
+                                                            <!--<input type="hidden" name="form_token" value="CRd6RReDNDzSOKiV-0jd-f07pk-cMWpz8fDxcztM-to">-->
+                                                            <!--<input type="hidden" name="form_id" value="weike_transcripts_user_reset_password">-->
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+                                        <!--大家在这上面写各自的主体内容-->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--主体内容-->
+                            <div class="region">
+
+                            </div>
+                            <!--左边导航-->
+                        </div>
+                    </div>
+</body>
+
+</html>

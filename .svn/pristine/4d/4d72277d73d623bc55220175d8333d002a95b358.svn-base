@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>新建年级</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <!--公共js样式-->
+    <!--公共css样式-->
+    <script src="js/add-gread.js"></script>
+    <script src="../js/cjy-ajax.js"></script>
+    <!--公共js样式-->
+    <script src="../js/handlebars-v4.0.5.js"></script>
+    <!--以上3行必加-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+<div class="warp">
+    <div class="header">
+
+    </div>
+    <!--头部-->
+    <div class="lump clearfix">
+        <div class="main-content">
+            <div class="section-wrapper">
+                <div class="section">
+                    <!--<h1 class="page-title">初二</h1>-->
+                    <!--大家在这里写各自的主体内容-->
+                    <p class="page_title">系统管理 - 新建年级</p>
+
+                    <div class="content">
+
+
+                        <div class="form-item form-type-select form-item-grade">
+                            <label for="edit-grade">该年级是哪年入学的 <span class="form-required" title="此项必填。">*</span></label>
+                            <select id="edit-grade" name="grade" class="form-select"><option value="7">2015 (将于2018年毕业）</option><option value="2016">2016 (将于2019年毕业）</option><option value="2017">2017 (将于2020年毕业）</option></select>
+                        </div>
+                        <div>
+                            <div class="form-item form-type-textfield form-item-name">
+                                <label for="edit-name">该年级共有多少个班 <span class="form-required" title="此项必填。">*</span></label>
+                                <input type="text" id="edit-name" name="name" value="" size="60" maxlength="128" class="form-text required">
+                            </div>
+
+                            <input type="button" class="edit-add" name="op" value="下一步" >
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <!--大家在这上面写各自的主体内容-->
+
+                </div>
+            </div>
+        </div>
+        <!--主体内容-->
+        <div class="region">
+
+        </div>
+        <!--左边导航-->
+    </div>
+</div>
+</body>
+
+</html>

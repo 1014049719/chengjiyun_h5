@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>考试成绩-整体分析</title>
+    <link href="css/cjy_common.css" rel="stylesheet" />
+    <link href="css/analyse.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="js/cjy.js"></script>
+    <script src="js/handlebars-1.0.0.beta.6.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section clearfix">
+                        <h1 class="page-title">考试成绩</h1>
+                        <div class="title_two">
+                            <span class="name"></span>
+                            <a href="#" target="_blank" class="publish_icon">
+                                <img src="img/yifabu.png">
+                                <span>该考试已发布，相关师生可访问。 点击进入编辑页面。</span>
+                            </a>
+                        </div>
+                        <div>
+                            <ul class="tabs clearfix">
+                                <li class="active">
+                                    <a href="#" class="active">
+                                        <span class="tab">整体信息</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="tab">均分分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">各班各次考试均分排名</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">名次构成分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">分数段</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">高分段</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">单科上线分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">分层高分段分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">优生名单</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">进步退步名单</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">上线趋势分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">不合格名单</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">学困情况分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">分层学困情况分析</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <span class="tab">上线稳定性分析</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="analyse_box">
+                            <div id="page-general-info" class="analyse_page show">
+                                <div class="child-tabs">
+                                    <ul class=" clearfix">
+                                        <li class="active">
+                                            <a href="#" onclick="return set_subpage(this, 'page-general-info-subjectall');">
+                                                <span class="tab">全部</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="return set_subpage(this, 'page-general-info-overview');">
+                                                <span class="tab">概要</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="return set_subpage(this, 'page-general-info-peruse');">
+                                                <span class="tab">阅览统计</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="set_subpage(this, 'page-general-info-0');">
+                                                <span class="tab">整体信息</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h3 class="general-info-name">整体信息</h3>
+                                <div class="subpage text" id="page-general-info-overview">
+                                    <p class="title">概要</p>
+                                    <p>考生人数：<span class="student_num"></span></p>
+                                    <p>考试时间：<span class="exam_time"></span></p>
+                                    <p>导入时间：<span class="add_time"></span></p>
+                                    <p>对比考试：<span class="exam_pk"></span></p>
+                                </div>
+                                <div class="subpage text" id="page-general-info-peruse">
+                                    <p class="title">阅览统计</p>
+                                    <p>阅览次数：<span class="look_num"></span></p>
+                                    <p class="teacher">相关教师：<span class="teacher_looknum"></span>/<span class="teacher_num"></span>
+                                        <span class="tips">和本次考试相关的<span class="teacher_num"></span>位老师已经有<span class="teacher_looknum"></span>位浏览了分析报告。</span>
+                                    </p>
+                                    <p class="student">相关学生：<span class="studentr_looknum"></span>/<span class="student_num"></span>
+                                        <span class="tips">和本次考试相关的<span class="student_num"></span>位学生已经有<span class="studentr_looknum"></span>位浏览了分析报告。</span>
+                                    </p>
+                                </div>
+                                <div class="subpage" id="page-general-info-0">
+                                    <table class="page1-table" id="table-general-info">
+
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="analyse_page">
+                            </div>
+                            <div class="analyse_page">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--主体内容-->
+            <div class="region">
+            </div>
+            <!--左边导航-->
+        </div>
+    </div>
+    <script id="table-general-info-template" type="text/x-handlebars-template">
+        <tr>
+            <th></th>
+            {{#each show}}
+            <th>{{this}}</th>
+            {{/each}}
+        </tr>
+        <tr>
+            {{#each list}}
+            <td>{{name}}</td>
+                {{#each scorelist}}
+                <td>{{num}}</td>
+                {{/each}}
+            </tr>
+            {{/each}}
+
+    </script>
+    <!--进行数据处理、html构造-->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        //模拟的json对象
+        var data_msg;
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: "data/analyse2.json",
+            success: function (msg) {
+                    data_msg=msg.data;
+                    //注册一个Handlebars模版，通过id找到某一个模版，获取模版的html框架
+                    //$("#table-template").html()是jquery的语法，不懂的童鞋请恶补。。。
+                    var myTemplate = Handlebars.compile($("#table-general-info-template").html());
+                    //将json对象用刚刚注册的Handlebars模版封装，得到最终的html，插入到基础table中。
+                    $('#table-general-info').append(myTemplate(data_msg));
+                }
+            })
+      });
+    </script>
+</body>
+
+</html>

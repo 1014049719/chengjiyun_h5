@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>系统管理 - 新增学生账号</title>
+    <!--公共css样式-->
+    <link href="../css/cjy_common.css" rel="stylesheet"/>
+    <link href="css/systemManage.css" rel="stylesheet"/>
+
+    <!--加载jquery库-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--公=共js样式-->
+    <script src="../js/cjy.js"></script>
+    <script src="js/addStudentAccount.js"></script>
+</head>
+
+<body>
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+
+    </div>
+    <!--下部分-->
+    <div class="lump clearfix">
+        <!--主体内容-->
+        <div class="main-content">
+            <div class="section-wrapper">
+                <div class="section">
+                    <h1 class="page_title">系统管理 - 删除学生账号</h1>
+                    <div class="div_content">
+
+                        <form action="schoolRegister-manage.html" method="post"
+                              id="weike-transcripts-user-delete-student" accept-charset="UTF-8">
+                            <div>
+                                如果您需要删除学生的账号，请在此搜索后进行删除。如果您需要批量删除全年级的账号，请到
+                                <a href="schoolRegister-manage.html">学籍管理</a>
+                                <br><br>
+                                <div class="form-item form-type-textfield form-item-keyword">
+                                    <label for="edit-keyword">学号或姓名 </label>
+                                    <input id="edit-keyword" name="keyword" value="" size="60" maxlength="128"
+                                           class="form-text" type="text">
+                                </div>
+
+                                <input onclick="return input_isNull();"  id="edit-search" class="blue-btn" value="搜索" type="submit">
+                                <!--<input name="form_token" value="epFs4ZWjAHWVpQgs7mYcgqfRfRaxN8qcIEt4paPNZfQ"-->
+                                       <!--type="hidden">-->
+                                <!--<input name="form_id" value="weike_transcripts_user_delete_student" type="hidden">-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--左边导航-->
+        <div class="region">
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

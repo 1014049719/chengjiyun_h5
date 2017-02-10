@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>系统管理 - 年级学籍管理</title>
+    <!--公共css样式-->
+    <link href="../css/cjy_common.css" rel="stylesheet"/>
+    <link href="css/systemclass.css" rel="stylesheet"/>
+    <!--加载jquery库-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--公=共js样式-->
+    <script src="../js/handlebars.runtime.min.js"></script>
+    <script src="js/handlebar-templates.js"></script>
+    <script src="../js/cjy.js"></script>
+</head>
+
+<body>
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+
+    </div>
+    <!--下部分-->
+    <div class="lump clearfix">
+        <!--主体内容-->
+        <div class="main-content">
+            <div class="section-wrapper clearfix">
+                <div class="section">
+                    <h1 class="page_title">系统管理 - 年级学籍管理</h1>
+                    <form id="form" action="schoolRegister-manage.html" method="get" accept-charset="UTF-8">
+                        <div class="container-inline">
+                            <input placeholder="学号或姓名" id="edit_keyword" name="keyword" value="" size="20"
+                                   maxlength="128" class="form-text" type="text">
+                            <input class="border_blue_btn" id="edit_search" value="搜索" type="button">
+                            <a class="border_blue_btn" href="addStudentAccount.html">新增学生账号</a>
+                            <a class="border_blue_btn" href="modificationMessage.html">重新分班 或批量更新信息</a>
+                            <a class="border_red_btn">删除全级学生账号</a>
+                        </div>
+                        <div class="container-inline" style="margin-top: 10px">
+                            <select id="edit-class" name="class" class="form-select">
+                                <option value="0">= 全部 =</option>
+                                <option value="1" selected="selected">1班</option>
+                                <option value="2">2班</option>
+                                <option value="3">3班</option>
+                                <option value="4">4班</option>
+                                <option value="5">5班</option>
+                                <option value="6">6班</option>
+                                <option value="7">7班</option>
+                                <option value="8">8班</option>
+                                <option value="9">9班</option>
+                                <option value="10">10班</option>
+                            </select>
+                            <input id="edit-view" name="op" value="查看" class="border_blue_btn_round" type="button">
+                            <input
+                                    onclick="window.location.href =&quot;http://chengjiyun.com/democz?q=utility/download-excel/%7B%22auth_uid%22%3A%223207%22%2C%22auth_sid%22%3A%22d36r0bcmFPZ4t90nZRmprfd2iU2pENIggy3Xm2L-Pfw%22%2C%22perm%22%3A%22config+template%22%2C%22filename%22%3A%22%5Cu521d%5Cu4e001%5Cu73ed%5Cu5b66%5Cu751f%5Cu540d%5Cu5355%22%2C%22module%22%3A%22weike_transcripts%22%2C%22file%22%3A%22user%5C%2Fweike_transcripts_user_grade_manage%22%2C%22func%22%3A%22weike_transcripts_user_grade_search_students%22%2C%22args%22%3A%5B%227%22%2C%221%22%2C1%2C%222015%22%5D%7D&quot;; return false;"
+                                    id="edit-download" name="op" value="下载" class="border_blue_btn_round" type="button">
+                        </div>
+
+                        <!--数据表格-->
+                        <div id="schoolRegister_data">
+                            <!--填充表格数据-->
+
+                        </div>
+
+                        <a class="blue-btn" id="delete_student">永久删除账号</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--左边导航-->
+        <div class="region">
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        searchData();
+        $('#edit_search').click(function () {
+            searchData();
+        })
+    });
+    function searchData() {
+        $.ajax({
+            type: "get",
+            data:$('form').serialize(),
+            dataType: "json",
+            url: "data/schoolRegister-manage.json",
+            success: function (msg) {
+                if (msg.res == '1') {
+                    //用jquery获取模板
+                    //var source = $("#entry-template").html();
+                    //预编译模板
+                    //var template = Handlebars.compile(source);
+                    $("#schoolRegister_data").children().remove();
+                    var template = Handlebars.templates['grade-manage-table.tpl'];
+                    Handlebars.registerHelper("ifOdd", function (index) {
+                        if (index % 2 != 0) {
+                            return "odd";
+                        }
+                        return "even";
+                    });
+                    var temple = template(msg);
+                    //console.log(temple);
+                    $("#schoolRegister_data").append(temple);
+                }
+            }
+        });
+        $('#delete_student').click(function () {
+            if(!confirm('该操作无法恢复！请问是否确认批量删除学生账号？')){
+                return false;
+            }
+            $('#form').submit();
+        });
+    }
+    function checkAll(obj) {
+        $("input[name='chk_list']").attr("checked", obj.checked);
+    }
+</script>
+</body>
+</html>

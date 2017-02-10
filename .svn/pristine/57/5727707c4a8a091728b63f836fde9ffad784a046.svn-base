@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>学校</title>
+    <link href="../css/cjy_common.css" rel="stylesheet"/>
+    <link href="css/wxx.css" rel="stylesheet"/>
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <script src="../js/cjy-ajax.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+<div class="warp">
+    <div class="header">
+    </div>
+    <!--头部-->
+    <div class="lump clearfix">
+        <div class="main-content">
+            <div class="section-wrapper">
+                <div class="section">
+                    <!--<h1 class="page-title">初二</h1>-->
+                    <!--大家在这里写各自的主体内容-->
+                    <p class="page_title">系统管理 - 学校</p>
+                    <div class="content">
+                        <br>
+                        <table class="invisible " id="invisible1" style="width:auto;">
+                            <!--<tbody>-->
+                            <tr class="bigger">
+                                <td style="width:8em;"></td>
+                                <td style="width:10em;">
+                                    <img src="./img/student_icon_gray.png"> 学生
+                                </td>
+                                <td style="width:10em">
+                                    <img src="./img/teacher_icon_gray.png"> 教师
+                                </td>
+                                <td style="width:10em">
+                                    <img src="./img/exam_icon_gray.png"> 考试
+                                </td>
+                            </tr>
+                            <!--<tr class="bigger">-->
+                            <!--<td>-->
+                            <!--<a href="../wth/systemManage-class.html">-->
+                            <!--<div class="blue-round-box">初三<br>2013</div>-->
+                            <!--</a>-->
+                            <!--</td>-->
+                            <!--<td class="add-grade1">-->
+                            <!--<a href="manage-add-gread.html">-->
+                            <!--<div class="blue-round-box">新建年级</div>-->
+                            <!--</a>-->
+                            <!--</td>-->
+                            <!--<td class="student_number1"></td>-->
+                            <!--<td class="teacher_number1"></td>-->
+                            <!--<td class="exam_number1"></td>-->
+                            <!--</tr>-->
+                            <!--<tr class="bigger">-->
+                            <!--<td>-->
+                            <!--<a href="../wth/systemManage-class.html">-->
+                            <!--<div class="blue-round-box">初二<br>2014</div>-->
+                            <!--</a>-->
+                            <!--</td>-->
+                            <!--<td class="add-grade2">-->
+                            <!--<a href="manage-add-gread.html">-->
+                            <!--<div class="blue-round-box">新建年级</div>-->
+                            <!--</a>-->
+                            <!--</td>-->
+                            <!--<td class="student_number2"></td>-->
+                            <!--<td class="teacher_number2"></td>-->
+                            <!--<td class="exam_number2"></td>-->
+                            <!--</tr>-->
+                            <!--<tr class="bigger">-->
+                            <!--<td>-->
+                            <!--<a href="../wth/systemManage-class.html">-->
+                            <!--<div class="blue-round-box">初一<br>2015</div>-->
+                            <!--</a>-->
+                            <!--</td>-->
+                            <!--<td class="add-grade3">-->
+                            <!--<a href="manage-add-gread.html">-->
+                            <!--<div class="blue-round-box">新建年级</div>-->
+                            <!--</a>-->
+                            <!--</td>-->
+                            <!--<td class="student_number3"></td>-->
+                            <!--<td class="teacher_number3"></td>-->
+                            <!--<td class="exam_number3"></td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                            <!--<td colspan="4" class="bigger center">-->
+                            <!--<br>学校全局管理操作</td>-->
+                            <!--</tr>-->
+                            <!--<tr class="noborder bigger">-->
+                            <!--<td></td>-->
+                            <!--<td style="text-align:left; vertical-align:top;"><a href="manage-grade-up.html" target="_blank">年级升迁</a><br>-->
+                            <!--<a href="manage-search-student.html" target="_blank">搜索学生账号</a><br>-->
+                            <!--<a-->
+                            <!--href="manage-delete-student.html" target="_blank">删除学生账号</a><br><a href="manage-set-notice.html"-->
+                            <!--target="_blank">设置登录页公告</a><br></td>-->
+                            <!--<td style="text-align:left; vertical-align:top;"><a href="manage-reset-teacher-key.html" target="_blank">帮教师重置密码</a><br>-->
+                            <!--<a href="manage-add-teacher-one.html" target="_blank">新增教师</a><br>-->
+                            <!--<a-->
+                            <!--href="manage-teacher.html" target="_blank">搜索教师账号</a><br><a href="manage-teacher.html"-->
+                            <!--target="_blank">删除教师账号</a><br><a href="manage-update-teacher.html"-->
+                            <!--target="_blank">批量更新教师信息</a><br><a href="manage-add-manage.html"-->
+                            <!--target="_blank">添加管理员</a><br></td>-->
+                            <!--<td style="text-align:left; vertical-align:top;"><a href="manage-set-analyse-template.html" target="_blank">设置分析模板</a><br>-->
+                            <!--<a href="manage-set-teacher-authority.html" target="_blank">设置教师权限</a><br></td>-->
+                            <!--</tr>-->
+                            <!--</tbody>-->
+                        </table>
+
+                        <table class="invisible " style="width:auto;">
+                            <tbody>
+                            <tr>
+                                <td colspan="4" class="bigger center">
+                                    <br>学校全局管理操作
+                                </td>
+                            </tr>
+                            <tr class="noborder bigger">
+                                <td></td>
+                                <td style="text-align:left; vertical-align:top;">
+                                    <a href="manage-add-manage.html" target="_blank">添加管理员</a></td>
+                                <td style="text-align:left; vertical-align:top;"><a href="manage-reset-teacher-key.html"
+                                                                                    target="_blank">帮教师重置密码</a></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                    <!--大家在这上面写各自的主体内容-->
+
+                </div>
+            </div>
+        </div>
+        <!--主体内容-->
+        <div class="region">
+
+        </div>
+        <!--左边导航-->
+    </div>
+</div>
+<!--
+   <script src="../js/cjy.js"></script><!--向后端获取数据。调用雪娇的JS文件，函数名是cjyAjax-->
+<!--   <script src="../js/cjy.js"></script><!--向后端获取数据。调用自己的JS文件，函数名是cjyAjax-->
+
+<script src="js/manage-school.js"></script>
+
+</body>
+
+</html>

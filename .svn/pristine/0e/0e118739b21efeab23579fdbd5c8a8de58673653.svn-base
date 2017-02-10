@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>搜索学生账号</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+
+    <!--公共css样式-->
+    <script src="js/student-search.js"></script>
+
+
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <script src="../js/cjy-ajax.js"></script>
+    <!--公共js样式-->
+    <script src="../js/handlebars-v4.0.5.js"></script>
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+                        <p class="page_title">系统管理 - 搜索学生账号</p>
+
+                        <div class="content" id="input-student-name">
+
+                            <div>
+                                <div class="form-item form-type-textfield form-item-keyword">
+                                    <label for="edit-keyword">学号或姓名 </label>
+                                    <input type="text" id="edit-keyword" name="keyword" value="" size="60" maxlength="128" class="form-text">
+                                </div>
+                                <input type="button" class="edit-search" name="op" value="搜索">
+
+                            </div>
+
+                        </div>
+
+                        <div><a href="#" class="button" id="button-return" onclick="window.location.href='manage-search-student.html' ;return false;">返回</a></div>
+
+                            <!--数据表格-->
+                            <div id="search_student_data">
+                                 <!--填充表格数据-->
+                            <script id="search_student_data_entry_template" type="text/x-handlebars-template">
+    <table>
+        <tr>
+            <th class="select-all"><input class="form-checkbox" title="选择此表中所有的行" type="checkbox"></th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>班别</th>
+            <th>操作</th>
+        </tr>
+        {{#each attr}}
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>{{student_id}}</td>
+            <td>{{name}}</td>
+            <td>{{class_type}}</td>
+            <td><a href="#" onclick="reset_password({{id}}, '{{name}}');">重置密码</a>　
+                <a href="/democz/?q=transcripts/user/edit/{{id}}">编辑修改</a>　
+                <a href="#" onclick="delete_account({{id}}, '{{name}}');">删除账号</a></td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
+
+                            </div>
+                           
+
+
+
+                            <!--大家在这上面写各自的主体内容-->
+                        </div>
+                    </div>
+                </div>
+                <!--主体内容-->
+                <div class="region">
+
+                </div>
+                <!--左边导航-->
+            </div>
+
+</body>
+
+</html>

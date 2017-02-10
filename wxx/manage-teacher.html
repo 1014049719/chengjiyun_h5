@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>教师管理</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <!--公共css样式-->
+    <script src="js/teacher-search.js"></script>
+
+
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <script src="../js/cjy-ajax.js"></script>
+    <!--公共js样式-->
+    <script src="../js/handlebars-v4.0.5.js"></script>
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+            <!--<img class="log" src="img/log.png" />
+            <ul class="main-menu-links">
+                <li class="main-menu-transcripts"><a href="#">成绩</a></li>
+                <li class="main-menu-messages"><a href="#">信息</a></li>
+                <li class="main-menu-setting"><a href="#">设置</a></li>
+            </ul>
+            <ul class="main-menu-right">
+                <li class="name"><a href="#">test</a></li>
+                <li class="logout"><a href="#">退出</a></li>
+                <li><a href="#">提意见</a></li>
+                <li><a href="#">帮助</a></li>
+            </ul>-->
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+
+
+
+                        <p class="page_title">系统管理 - 教师</p>
+
+
+                        <div class="content" id="input-teacher-name">
+
+                            <div>
+                                <div class="form-item form-type-textfield form-item-keyword">
+                                    <label for="edit-keyword">账号或姓名 </label>
+                                    <input type="text" id="edit-keyword" name="keyword" value="" size="60" maxlength="128" class="form-text">
+                                </div>
+                                <div class="container-inline"><input type="button" class="edit-search" name="op" value="搜索">
+                                    <input class="focused-button form-submit" type="submit" id="edit-deletelot" name="op" value="批量删除教师账号">
+                                    <input
+                                        class="red-button-2 form-submit" onclick="if (confirm(&quot;确认删除全体教师账号吗？此操作无法恢复！&quot;)) {
+            return true; } else { return false; }" type="submit" id="edit-delete" name="op" value="删除全体教师账号"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div><a href="manage-search-student.html" class="button" id="button-return" onclick="window.history.go(-1); return false;">返回</a></div>
+                        <!--数据表格-->
+                        <div id="search_teacher_data">
+                            <!--填充表格数据-->
+                            <script id="search_teacher_data_entry_template" type="text/x-handlebars-template">
+    <table>
+        <tr>
+            <th class="select-all"><input class="form-checkbox" title="选择此表中所有的行" type="checkbox"></th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>班别</th>
+            <th>操作</th>
+        </tr>
+        {{#each attr}}
+        <tr class="{{ifOdd @index}}">
+            <td><input type="checkbox" /></td>
+            <td>{{student_id}}</td>
+            <td>{{name}}</td>
+            <td>{{class_type}}</td>
+            <td><a href="../wth/resetPassword.html" onclick="reset_password({{id}}, '{{name}}');">重置密码</a>　
+                <a href="/democz/?q=transcripts/user/edit/{{id}}">编辑修改</a>　
+                <a href="#" onclick="delete_account({{id}}, '{{name}}');">删除账号</a></td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
+
+                        </div>
+
+
+                        <!--大家在这上面写各自的主体内容-->
+
+                    </div>
+                </div>
+            </div>
+            <!--主体内容-->
+            <div class="region">
+                <!--<div class="contenter">
+                    <ul class="menu">
+                        <li class="menu2-title menu2-user-manage">系统管理</li>
+                        <li><a href="/democz/?q=transcripts/user/school">学校</a></li>
+                        <li><a href="/democz/?q=transcripts/user/grade/9">初三</a></li>
+                        <li><a href="/democz/?q=transcripts/user/grade/8">初二</a></li>
+                        <li><a href="/democz/?q=transcripts/user/grade/7">初一</a></li>
+                        <li><a href="/democz/?q=transcripts/user/grade/graduate">已毕业年级</a></li>
+                    </ul>
+                    <ul class="menu">
+                        <li class="menu2-title menu2-transcripts-manage">教学管理</li>
+                        <li><a href="/democz/?q=transcripts/search-exam">考试分析</a></li>
+                        <li><a href="/democz/?q=transcripts/my-exam">考试管理</a></li>
+                        <li><a href="/democz/?q=transcripts/grade/9">初三</a></li>
+                        <li><a href="/democz/?q=transcripts/grade/8" class="active">初二</a></li>
+                        <li><a href="/democz/?q=transcripts/grade/7">初一</a></li>
+                    </ul>
+                </div>-->
+            </div>
+            <!--左边导航-->
+        </div>
+    </div>
+</body>
+
+</html>

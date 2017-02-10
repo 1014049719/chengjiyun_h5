@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>批量更新教师信息</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxxwxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+                        <p class="page_title">系统管理 - 批量更新教师</p>
+                        <div class="content">
+                            <form class="block-progress" enctype="multipart/form-data" action="http://chengjiyun.com/democz/?q=transcripts/user/update/teacher"
+                                method="post" id="school-users-import" accept-charset="UTF-8">
+                                <div>
+                                    <div id="replace_textfield_div"></div><input type="hidden" name="role" value="teacher"> 当需要批量新增教师用户时使用本功能，例如有若干新老师加入时，
+                                    <br> 如果是为整个年级的老师初次新建账号，可以在
+                                    <a href="http://chengjiyun.com/democz/?q=transcripts/user/class-status/12/">年级任课安排</a>功能中设置任教安排的同时自动创建账号。<br><br>
+                                    <div><span class="triangle-item">1</span> 下载教师名单模板：
+                                        <a href="http://chengjiyun.com/democz/sites/democz/modules/school_users/templates/teachers.xls">文件模板</a><br><br></div>
+                                    <div
+                                        class="clearfix"><span class="triangle-item">2</span> 填入需要批量新增账号的学生名单
+                                        <br><img style="float:left; margin:0 25px" src="./批量更新教师信息 _ 初中演示环境_files/add_teacher_tips1.jpg">                                        注意：
+                                        <br> 1. 教师的账号一般就填写其中文姓名；<br> 2. 如果有教师重名时，姓名可以重复，账号不能重复，可以通过加科目后缀来区别，例子中代表了语文和数学的两位同名老师；<br>                                        3. 密码填写你希望为该老师设置的默认密码，建议采用6位以上的随机数字；<br>
+                                        <br></div>
+                                <div><span class="triangle-item">3</span> 导入名单：
+                                </div>
+                                <div class="form-item form-type-file form-item-files-file">
+                                    <input type="file" id="edit-file" name="files[file]" size="60" class="form-file">
+                                </div>
+                                <div class="form-item form-type-checkbox form-item-overwrite-password">
+                                    <input type="checkbox" id="edit-overwrite-password" name="overwrite_password" value="1" class="form-checkbox">                                    <label class="option" for="edit-overwrite-password">覆盖密码（勾选后，系统内若已存在该姓名学号的账号，会以导入文件中的密码覆盖其原来的密码，请谨慎使用，若对此存在疑问，请咨询成绩云的客服人员） </label>
+
+                                </div>
+                                <input class="blue-button form-submit ajax-processed" onclick="jQuery(&quot;#replace_textfield_div&quot;).hide();return true;"
+                                    type="submit" id="edit-add-batch" name="op" value="导入">
+                                <input
+                                    type="hidden" name="form_build_id" value="form-auE_oCr9rnpMsNpgziWtwV1sRRK9m2NeDcvHXqzVyxI">
+                                    <input type="hidden" name="form_token" value="zQeaRualba10A7rgQo8hlm8UiHAhrJTIWqaaAlf7NYw">
+                                    <input type="hidden" name="form_id" value="school_users_import">
+                        </div>
+                        </form>
+                    </div>
+
+
+
+
+
+                    <!--大家在这上面写各自的主体内容-->
+
+                </div>
+            </div>
+        </div>
+        <!--主体内容-->
+        <div class="region">
+
+        </div>
+        <!--左边导航-->
+    </div>
+    </div>
+</body>
+
+</html>

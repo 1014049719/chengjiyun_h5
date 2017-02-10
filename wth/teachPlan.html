@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>系统管理 - 新增学生账号</title>
+    <!--公共css样式-->
+    <link href="../css/cjy_common.css" rel="stylesheet"/>
+    <link href="css/systemManage.css" rel="stylesheet"/>
+
+    <!--加载jquery库-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--公=共js样式-->
+    <script src="../js/cjy.js"></script>
+    <script src="../js/handlebars-v4.0.5.js"></script>
+
+    <script src="js/addStudentAccount.js"></script>
+</head>
+
+<body>
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+
+    </div>
+    <!--下部分-->
+    <div class="lump clearfix">
+        <!--主体内容-->
+        <div class="main-content">
+            <div class="section-wrapper">
+                <div class="section">
+                    <h1 class="page_title">系统管理 - 重置密码</h1>
+                    <div class="div_content">
+
+                        <form enctype="multipart/form-data" action="/democz/?q=transcripts/user/class-status/7/2015"
+                              method="post" id="weike-transcripts-user-class-status" accept-charset="UTF-8">
+                            <div>
+                                任课安排表描述了各年级里的班级属性和任课安排，这些信息将在成绩分析时调用；<br>
+                                为了让成绩分析结果符合年级的实际情形，请在以下情况发生时进行相应的信息更新：<br>
+                                1) 初次启用成绩云时，为各年级配置正确的信息；<br>
+                                2) 新学年开始、重新分班、教师任教调动时，更新相关信息；<br>
+                                <br>
+                                当前任课安排表：<br>
+
+                                <!--表格-->
+                                <div id="teacherPlan_data">
+
+                                    <!--表格模板-->
+                                    <script id="entry-template" type="text/x-handlebars-template">
+                                        <table>
+                                            <tr>
+                                                <th>入学年份</th>
+                                                <th>年级</th>
+                                                <th>班别</th>
+                                                <th>科别</th>
+                                                <th>特色班</th>
+                                                <th>班主任</th>
+                                                <th>语文</th>
+                                                <th>数学</th>
+                                                <th>英语</th>
+                                                <th>物理</th>
+                                                <th>化学</th>
+                                                <th>生物</th>
+                                                <th>政治</th>
+                                                <th>历史</th>
+                                                <th>地理</th>
+                                                <th>体育</th>
+                                            </tr>
+                                            {{#each data}}
+                                            <tr class="{{ifOdd @index}}">
+                                                <td>{{year}}</td>
+                                                <td>{{grade}}</td>
+                                                <td>{{class_type}}</td>
+                                                <td>{{subject}}</td>
+                                                <td>{{tese_type}}</td>
+                                                <td>{{head_teacher}}</td>
+                                                <td>{{chinese}}</td>
+                                                <td>{{math}}</td>
+                                                <td>{{english}}</td>
+                                                <td>{{physics}}</td>
+                                                <td>{{chemistry}}</td>
+                                                <td>{{biology}}</td>
+                                                <td>{{polity}}</td>
+                                                <td>{{history}}</td>
+                                                <td>{{geography}}</td>
+                                                <td>{{sport}}</td>
+                                            </tr>
+                                            {{/each}}
+                                        </table>
+                                    </script>
+
+                                </div>
+
+                                
+                                <div class="container-inline">
+                                    <div class="form-item form-type-textfield form-item-grade-heads">
+                                        <label for="edit-grade-heads">年级领导名单： </label>
+                                        <input id="edit-grade-heads" name="grade_heads" value="林彩妙, 叶云城" size="60"
+                                               maxlength="128" class="form-text" type="text">
+                                    </div>
+                                    <input id="edit-save" name="op" value="保存" class="form-submit" type="submit"></div>
+                                　　　　　　　名单中的用户将可以查看年级整体趋势分析，请填写校领导和年级主任的名字，名字之间以逗号分隔。<br><br>
+                                <h3>修改任课安排表流程：</h3>
+                                <div><span class="triangle-item">1</span>
+                                    下载当前任课安排表：<a class="blue-button"
+                                                 href="http://chengjiyun.com/democz/?q=transcripts/user/download-class-status/7/3207/ZD7B5exOSk251rKTIJ5UFSA7kf7h7A3Fq9B_kZ_2-VY/2015">点击下载</a><br><br>
+                                </div>
+                                <div><span class="triangle-item">2</span>
+                                    填入或更新正确信息<br><br></div>
+                                <span class="triangle-item">3</span>导入编辑好的任课安排表：
+                                <div style="margin-left:30px">
+                                    <div id="edit-class-status-file-ajax-wrapper">
+                                        <div class="form-item form-type-managed-file form-item-class-status-file">
+                                            <div id="edit-class-status-file" class="form-managed-file"><input
+                                                    id="edit-class-status-file-upload" name="files[class_status_file]"
+                                                    size="22" class="form-file" type="file"><input
+                                                    id="edit-class-status-file-upload-button"
+                                                    name="class_status_file_upload_button" value="上传"
+                                                    class="form-submit ajax-processed" type="submit"><input
+                                                    name="class_status_file[fid]" value="0" type="hidden">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input class="blue-button form-submit" id="edit-import" name="op" value="导入任课安排表"
+                                           type="submit"></div>
+                                <input name="form_build_id" value="form-ejTAKpUSS_d0WkoLT0Jv61ampikX7V_0ZY9kdCxlf_s"
+                                       type="hidden">
+                                <input name="form_token" value="QpCC_clC21XQZmtlV_8ujm5W9lgqpCK1h55ZXtMfdYc"
+                                       type="hidden">
+                                <input name="form_id" value="weike_transcripts_user_class_status" type="hidden">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--左边导航-->
+        <div class="region">
+
+        </div>
+    </div>
+</div>
+
+<!--填数据-->
+<script>
+    $(function () {
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: "data/teachPlan.json",
+            success: function (msg) {
+                if (msg.res == '1') {
+                    //用jquery获取模板
+                    var source = $("#entry-template").html();
+                    //预编译模板
+                    var template = Handlebars.compile(source);
+                    Handlebars.registerHelper("ifOdd", function(index) {
+                        if (index % 2 != 0) {
+                            return "odd";
+                        }
+                        return "even";
+                    });
+                    var temple = template(msg);
+                    console.log(temple);
+                    $("#teacherPlan_data").append(temple);
+                }
+            }
+        });
+    })
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>增加单个教师</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+                        <p class="page_title">系统管理 - 增加单个教师</p>
+
+
+
+                        <div class="content">
+                            <div>
+                                <div class="tabs-visible">
+                                    <h2 class="element-invisible">主标签</h2>
+                                    <ul class="tabs primary clearfix">
+                                        <li><a href="manage-add-teacher-ones.html"><span class="tab">批量新增教师</span></a></li>
+                                        <li class="active"><a href="manage-add-teacher-one.html" class="active"><span class="tab">新增单个教师</span><span class="element-invisible">（活动标签）</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="form-item form-type-textfield form-item-id">
+                                    <label for="edit-id">账号 <span class="form-required" title="此项必填。">*</span></label>
+                                    <input type="text" id="edit-id" name="id" value="" size="60" maxlength="128" class="form-text required">
+                                    <div class="description">（教师账号建议使用其本人姓名）</div>
+                                </div>
+                                <div class="form-item form-type-textfield form-item-name">
+                                    <label for="edit-name">姓名 <span class="form-required" title="此项必填。">*</span></label>
+                                    <input type="text" id="edit-name" name="name" value="" size="60" maxlength="128" class="form-text required">
+                                </div>
+                                <div class="form-item form-type-password-confirm form-item-password">
+                                    <div class="form-item form-type-password form-item-password-pass1 password-parent">
+                                        <div class="password-strength">
+                                            <div class="password-strength-text" aria-live="assertive"></div>
+                                            <div class="password-strength-title">密码强度：</div>
+                                            <div class="password-indicator">
+                                                <div class="indicator"></div>
+                                            </div>
+                                        </div>
+                                        <label for="edit-password-pass1">密码 <span class="form-required" title="此项必填。">*</span></label>
+                                        <input class="password-field form-text required password-processed" type="password" id="edit-password-pass1" name="password[pass1]"
+                                            size="60" maxlength="128">
+                                    </div>
+                                    <div class="form-item form-type-password form-item-password-pass2 confirm-parent">
+                                        <div class="password-confirm">密码匹配： <span></span></div>
+                                        <label for="edit-password-pass2">确认密码 <span class="form-required" title="此项必填。">*</span></label>
+                                        <input class="password-confirm form-text required" type="password" id="edit-password-pass2" name="password[pass2]" size="60"
+                                            maxlength="128">
+                                    </div>
+                                    <div class="password-suggestions description" style="display: none;"></div>
+
+                                </div>
+                                <input type="hidden" name="role" value="老师">
+                                <div class="form-item form-type-select form-item-sex">
+                                    <label for="edit-sex">性别 <span class="form-required" title="此项必填。">*</span></label>
+                                    <select id="edit-sex" name="sex" class="form-select required"><option value="0">女</option><option value="1" selected="selected">男</option></select>
+                                </div>
+                                <div class="form-item form-type-select form-item-grade">
+                                    <label for="edit-grade">年级 </label>
+                                    <select id="edit-grade" name="grade" class="form-select"><option value="7">初一</option><option value="8">初二</option><option value="9">初三</option><option value="0">已毕业</option></select>
+                                </div>
+                                <input type="button" name="op" value="新增" class="edit-add-one">
+
+                            </div>
+                            </form>
+                        </div>
+
+
+
+
+
+                        <!--大家在这上面写各自的主体内容-->
+
+                    </div>
+                </div>
+            </div>
+            <!--主体内容-->
+            <div class="region">
+
+            </div>
+            <!--左边导航-->
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>吴小祥</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxxwxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/vendor/jquery.ui.widget.js"></script>
+    <script src="../js/jquery.iframe-transport.js"></script>
+    <script src="../js/jquery.fileupload.js"></script>
+
+
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+                        <p class="page_title">系统管理 - 批量更新教师</p>
+
+                        <input id="fileupload" type="file" name="files[]" data-url="server/php/" multiple>
+
+                        <div id="progress">
+                            <div class="bar" style="width: 0%;">
+                               <!-- .bar { height: 18px; background: green; }-->
+                            </div>
+                            
+                        </div>
+
+
+
+
+
+                        <!--大家在这上面写各自的主体内容-->
+
+                    </div>
+                </div>
+            </div>
+            <!--主体内容-->
+            <div class="region">
+
+            </div>
+            <!--左边导航-->
+        </div>
+    </div>
+    <script src="js/file-upload.js"></script>
+</body>
+
+</html>

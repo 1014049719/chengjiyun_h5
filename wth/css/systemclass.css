@@ -1,0 +1,58 @@
+.system_manage_class{
+    font-size: 16px;
+    font-family:"Microsoft YaHei UI";
+    width: auto;
+}
+.system_manage_class a{
+    color: #237ae4;
+}
+.system_manage_class img {
+    vertical-align: middle;
+}
+.system_manage_class a:hover, .system_manage_class a:focus {
+    color: #1b6ccf;
+    text-decoration: underline;
+}
+.system_manage_class span{
+    padding: 0 0 0 5px;
+    color: #666666;
+}
+.system_manage_class tr td{
+    text-align: center;
+    padding: 5px 20px;
+}
+.system_manage_class tr td a{
+    line-height: 30px;
+}
+.text_color_gray{
+    color: #333333;
+}
+.text_content{
+    font-family:"Microsoft YaHei UI";
+    font-size: 12px;
+    line-height: 25px;
+    color: #666666;
+}
+.container-inline div, .container-inline label {
+    display: inline;
+}
+input.form-text, select.form-select {
+    border: 1px solid #ccc;
+}
+select.form-select {
+    padding: 4px;
+}
+input {
+    font-size: 14px;
+    margin: 2px 0;
+    padding: 4px;
+}
+.blue-btn {
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 5px 14px;
+    background: #237ae4 none repeat scroll 0 0;
+    color: #ffffff;
+    cursor: pointer;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/vnd.microsoft.icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>考试成绩 | 高中演示环境</title>
+    <link type="text/css" rel="stylesheet" href="css/scoresection.css" media="all">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/scoresection.js"></script>
+    <script src="js/echarts.js"></script>
+</head>
+<body class="sidebar-first">
+    <div id="page-wrapper">
+        <div id="head">
+            <div class="section clearfix">
+                <div id="main-menu" class="navigation">
+                    <ul class="floatleft " id="main-menu-links">
+                        <li class="first leaf"><a href="#" id="main-menu-transcripts" title="">成绩</a></li>
+                        <li class="leaf"><a href="#" id="main-menu-messages">信息</a></li>
+                        <li class="last leaf"><a href="#" id="main-menu-setting">设置</a></li>
+                    </ul>
+                    <ul id="main-menu-right">
+                        <a href="#" style="text-decoration: none;"><li class="menu-help">提意见</li></a>
+                        <a href="#" style="text-decoration: none;"><li class="menu-help">帮助</li></a>
+                        <a href="#" style="text-decoration: none;"><li class="menu-login-logout">退出</li></a>
+                        <li><a href="#">test</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="main-wrapper">
+            <div id="content" class="content-wrapper">
+                <div class="section">
+                    <h1 class="title" id="page-title">考试成绩</h1>
+                    <div id="page-title-line" class="clearfix"></div>
+                    <form action="#" method="post" class="block content" id="weike-transcripts-total-view" accept-charset="UTF-8">
+                        <div class="noprint" style="height: 22px;">
+                            <span style="font-size: 18px;vertical-align:middle; ">2013级高三高考</span>
+                            <a href="#" target="_blank" class="publish_icon"><span>该考试已发布，相关师生可访问。 点击进入编辑页面。</span></a>
+                        </div>
+                        <div style="float:right; margin-top:6px;"><a href="#" class="noprint button">名次表</a></div>
+                        <div class="clearfix"></div>
+                        <div class="tabs">
+                            <ul class="tabs primary clearfix">
+                                <li class="active"><a href="#" onclick="return setpage(this, 'page6-total-score');" class="active">
+                                    <span class="tab">分数段</span></a></li>
+                                <li><a href="#" onclick="return setpage(this, 'page7-total-score');">
+                                    <span class="tab">高分段</span></a></li>
+                            </ul>
+                        </div>
+                        <div id="page6-total-score" class="page" style="display: block;">
+                            <div class="tabs">
+                                <ul class="tabs secondary clearfix">
+                                    <li class="active"><a href="#" class="active" onclick="return set_subpage(this, 'page6-subjectall');"><span class="tab">全部</span></a></li>
+                                    <li><a href="#" onclick="return set_subpage(this, 'page6-score-subject1-all');"><span class="tab">文科</span></a></li>
+                                    <li><a href="#" onclick="return set_subpage(this, 'page6-score-subject2-all');"><span class="tab">理科</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="tabs third page6-score-subject1-all">
+                                <ul class="tabs secondary clearfix">
+                                    <li class="active"><a href="#" class="active" onclick="return set_subpage2(this, 'page6-score-subject1-all');"><span class="tab">全部</span></a></li>
+                                    <li><a href="#" onclick="return set_subpage2(this, 'page6-score-subject1-single-score-section');"><span class="tab">单科分数段</span></a></li>
+                                    <li><a href="#" onclick="return set_subpage2(this, 'page6-score-subject1-total-score-section');"><span class="tab">总分分数段</span></a></li>
+                                    <li><a href="#" onclick=" return set_subpage2(this, 'page6-score-subject118-chart');"><span class="tab">总分分数段图表</span></a></li>
+                                    <li><a href="#" onclick="return set_subpage2(this, 'page6-score-subject1-total-score-detail');"><span class="tab">总分分数段详细表格</span></a></li>
+
+                                </ul>
+                            </div>
+                            <div class="tabs third page6-score-subject2-all">
+                                <ul class="tabs secondary clearfix">
+                                    <li class="active"><a href="#" class="active" onclick="return set_subpage2(this, 'page6-score-subject2-all');"><span class="tab">全部</span></a></li>
+                                    <li><a href="#" onclick="return set_subpage2(this, 'page6-score-subject2-single-score-section');"><span class="tab">单科分数段</span></a></li>
+                                    <li><a href="#" onclick="return set_subpage2(this, 'page6-score-subject2-total-score-section');"><span class="tab">总分分数段</span></a></li>
+                                    <li><a href="#" onclick=" return set_subpage2(this, 'page6-score-subject218-chart');"><span class="tab">总分分数段图表</span></a></li>
+                                    <li><a href="#" onclick="return set_subpage2(this, 'page6-score-subject2-total-score-detail');"><span class="tab">总分分数段详细表格</span></a></li>
+
+                                </ul>
+                            </div>
+                            <h2><a href="#" target="_blank" style="text-decoration: none;">分数段</a></h2>
+                            <div class="subpage" id="page6-score-subject1-all">
+                                <div class="subpage" id="page6-score-subject1-single-score-section">
+                                    <h4>文科班分数段</h4>
+
+                                </div>
+                                <div class="subpage" id="page6-score-subject1-total-score-section">
+
+                                </div>
+                                <div class="subpage" id="page6-score-subject118-chart">
+                                    <fieldset class="form-wrapper" id="edit-p6c118">
+                                        <legend><span class="fieldset-legend">文科图表</span></legend>
+                                        <div id="page6-score-subject118-chart-fieldset" class="fieldset-wrapper">
+
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById("page6-score-subject118-chart-fieldset"));
+        var option = {
+            "title": {
+                "text": "环比图",
+                "subtext": "昨天 ",
+                "x": "center"
+            },
+            color: ['#3398DB'],
+            tooltip : {
+                showContent:'true'
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'直接访问',
+                    type:'bar',
+                    barWidth: '60%',
+                    "itemStyle": {
+                        "normal": {
+                            "color": "rgba(69,114,167,1)",
+                            "barBorderRadius": 0,
+                            "label": {
+                                "show": true,
+                                "textStyle": {
+                                    "color": "rgba(0,0,0,1)"
+                                },
+                                "position": "top"
+                            }
+                        }
+                    },
+                    data:[10, 52, 200, 334, 390, 330, 220]
+                }
+            ]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

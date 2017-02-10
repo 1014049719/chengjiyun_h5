@@ -1,0 +1,365 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    line-height: 1.5;
+}
+
+.div_top {
+    width: 100%;
+    height: 30px;
+    background-image: url(../image/nav_bg.jpg);
+}
+
+.div_top_content {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.div_top_content li {
+    float: left;
+    list-style: none;
+    list-style-image: url(../image/arrow.jpg);
+    width: 80px;
+    line-height: 30px;
+}
+
+.div_top_content a:link, .div_top_content a:visited {
+    color: #8e8e8e;
+    text-decoration: none;
+}
+
+.div_top_content a:hover, .div_top_content a:active {
+    color: crimson;
+    text-decoration: none;
+}
+
+.divbody {
+    width: auto;
+    height: 1000px;
+    background-color: cadetblue;
+}
+
+.div_left_bar {
+    width: 200px;
+    height: 1000px;
+    background-color: gray;
+}
+
+.div_right_content {
+    width: 500px;
+    height: 1000px;
+    background-color: indianred;
+}
+
+.div_content {
+    width: 1200px;
+    height: auto;
+    margin-top: 10px;
+}
+
+table {
+
+    font-size: 0.857em;
+    margin: 10px 0;
+    border-collapse: collapse;
+    border: 0;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table.system_table td {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: #ccc 1px solid;
+}
+
+tr td, tr th {
+    padding: 4px 9px;
+    border: 1px solid #fff;
+    text-align: left;
+}
+
+.bigger {
+    font-size: 1.5em;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.blue-round-box {
+    background-color: rgb(106, 158, 228);
+    color: #fff;
+    display: inline-block;
+    padding: 0.9em 0.9em;
+    border-radius: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    color: #0071B3;
+}
+
+a:hover, a:focus {
+    color: #018fe2;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: underline;
+}
+.div_content_student{
+    margin-top: 20px;
+}
+/*.blue-button{*/
+    /*background: rgb(106,158,228) none;*/
+    /*border: none;*/
+    /*border-radius: 0;*/
+    /*color: #fff;*/
+    /*padding: 4px 17px;*/
+/*}*/
+.container-inline1{
+    margin-top: 20px;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+input {
+    margin: 2px 0;
+    padding: 4px;
+}
+input.form-text, textarea.form-textarea, select.form-select {
+    border: 1px solid #ccc;
+}
+textarea.form-textarea, select.form-select {
+    padding: 4px;
+}
+input, textarea {
+    font-size: 0.929em;
+}
+input {
+    margin: 2px 0;
+    padding: 4px;
+}
+/*input.form-submit.blue-button, a.blue-button {*/
+    /*background: rgb(106,158,228) none;*/
+    /*border: none;*/
+    /*border-radius: 0;*/
+    /*color: #fff;*/
+    /*padding: 4px 17px;*/
+/*}*/
+input.form-submit, a.button {
+    background: #fff url(../../img/buttons.png) 0 0 repeat-x;
+    border: 1px solid #e4e4e4;
+    border-bottom: 1px solid #b4b4b4;
+    border-left-color: #d2d2d2;
+    border-right-color: #d2d2d2;
+    color: #3a3a3a;
+    cursor: pointer;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    margin-right: 0.6em;
+    padding: 4px 17px;
+    -khtml-border-radius: 15px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+}
+input.form-submit:hover, input.form-submit:focus {
+    background: #dedede;
+}
+input.form-submit.red-button, a.red-button {
+    background: rgb(255,45,3) none;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    padding: 4px 17px;
+}
+input.form-submit.red-button:hover, input.form-submit.red-button:focus, a.red-button:hover, a.red-button:focus {
+    color: #fff;
+    text-decoration: none;
+    background: rgb(255,45,3) none;
+}
+table tr th, table tr th a, table tr th a:hover {
+    color: #FFF;
+    font-weight: bold;
+}
+table tr th {
+    background: #7bafef;
+    border-bottom-style: none;
+}
+
+.triangle-item {
+    background: url(../../img/round-bg.png) no-repeat;
+    width: 27px;
+    height: 30px;
+    color: #fff;
+    text-indent: 10px;
+    padding-top: 3px;
+    display: inline-block;
+}
+
+.form-item {
+    margin-bottom: 1em;
+    margin-top: 2px;
+    display: block;
+}
+.form-item label {
+    display: inline-block;
+    font-size: 0.929em;
+    font-weight: bold;
+    margin-right: 6px;
+    width: 70px;
+}
+
+.form-item .description {
+    font-size: 0.85em;
+}
+textarea, select.form-select {
+    border: 1px solid #ccc;
+}
+div.password-strength, div.password-suggestions {
+    display: none !important;
+}
+.password-strength {
+    width: 17em;
+    float: right;
+    margin-top: 1.4em;
+}
+div.password-confirm {
+    float: right;
+    margin-top: 1.5em;
+    visibility: hidden;
+    width: 17em;
+}
+.password-strength-text, .password-strength-title, div.password-confirm {
+    font-size: 0.82em;
+}
+.form-required {
+    color: #c00;
+}
+.item-indent {
+    margin-left: 30px;
+}
+
+.form-item label.option {
+    display: inline;
+    font-weight: normal;
+}
+.form-type-radio label, .form-type-checkbox label {
+    margin-left: 4px;
+}
+body, body.overlay {
+    color: #3b3b3b;
+}
+a.button:link, a.button:visited, a.button:hover, a.button:focus, a.button:active {
+    text-decoration: none;
+    color: #5a5a5a;
+}
+p {
+    margin: 0 0 1.2em;
+}
+.container-inline div, .container-inline label {
+    display: inline;
+}
+
+.personSet-section{
+    padding-left: 20px;
+    width: 100%;
+}
+
+
+.clearfix::before, .clearfix::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.clearfix::before, .clearfix::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.chartbox {
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+.clearfix, .list-div {
+    clear: both;
+}
+.chartbox {
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+}
+.chartbox .title {
+    background: #f2f2f2 none repeat scroll 0 0;
+    color: #666;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+.chart-contenter {
+    padding: 30px 15px;
+}
+.uploadimg-box {
+    display: block;
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+}
+.blue-btn {
+    border-radius: 4px;
+    padding: 5px 14px;
+
+}
+.sgm-blue-btn{
+    margin-top: 10px;
+    display: inline-block;
+}
+.border_blue_btn:hover, .child_tabs .active:hover, .down_btnbox a:hover, .blue-btn {
+    background: #237ae4 none repeat scroll 0 0;
+    color: #ffffff;
+}
+.blue-btn > input[type="file"] {
+    cursor: pointer;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.blue-btn {
+    border-radius: 4px;
+    padding: 5px;
+    background: #237ae4;
+    color: #FFFFFF;
+    border: 1px solid #237ae4;
+}
+.blue-btn:hover{
+    text-decoration: none;
+    background: #FFFFFF;
+    color: #237ae4;
+}
+
+/**白色下载按钮*/
+#replace_textfield_div .blue-btn{
+    background: #237ae4 url("../../img/down.png") no-repeat 1px ;
+    padding: 4px 9px 4px 16px;
+}
+.tabs>li.active span{
+    color: #237ae4;
+    font-weight: bold;
+}
+/*-------      ------*/
+

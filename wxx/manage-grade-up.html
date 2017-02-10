@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>年级升迁</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+                        <p class="page_title">系统管理 - 年级升迁</p>
+
+                        <div class="content">
+                            <form action="http://chengjiyun.com/democz/?q=transcripts/user/upgrade" method="post" id="school-users-upgrade" accept-charset="UTF-8">
+                                <div><input type="hidden" name="file_array" value="2016-11-01,10:47:31.sql.bz2 2016-08-29,14:16:11.sql.bz2 2016-05-19,17:16:30.sql.bz2 2016-05-19,17:14:42.sql.bz2">                                    新学年开始时，需要在这里将每个年级向上升迁（即批量修改他们所在的年级属性）。
+
+                                    <br> 完成后可以到新增年级里为新的年级创建账号。
+                                    <br><br>
+                                    <input class="blue-button form-submit" onclick="
+    if (11 &gt;= 10 || 11 &lt; 7) {
+      if (!confirm(&quot;年级升迁一般在暑假期间进行，当前日期并非常见的升迁时段，您确认现在要进行年级升迁吗？&quot;))
+        return false;
+    }
+
+    if (confirm(&quot;年级升迁会对所有学生和班级的年级值进行更新，请确认是否进行年级升迁？&quot;)) {
+      jQuery(&quot;#replace_textfield_div&quot;).hide();
+      return true;
+    } else {
+      return false;
+    }" type="submit" id="edit-upgrade" name="op" value="进行毕业及升迁">
+                                    <div style="color: #888;">注意：<br> 1.本操作比较耗时，请耐心等待；
+                                        <br> 2.毕业处理后，已毕业的学生账号将不能再登录系统，但其数据记录仍在系统中保存，老师可以查询。
+                                        <br>
+                                    </div>
+                                    <div style="margin-top: 30px;">如果年级升迁出错，可以恢复到以下时间点上的年级状态：</div>
+                                    <div class="container-inline">
+                                        <div class="form-item form-type-select form-item-recovery-select">
+                                            <select id="edit-recovery-select" name="recovery-select" class="form-select"><option value="0">备份 2016-11-01,10:47:31</option><option value="1">备份 2016-08-29,14:16:11</option><option value="2">备份 2016-05-19,17:16:30</option><option value="3">备份 2016-05-19,17:14:42</option></select>
+                                        </div>
+                                        <input class="blue-button form-submit" style="margin-left:10px;" onclick="
+    if (confirm(&quot;学校各年级的年级数值、学生学籍信息等都将恢复到该时间点时的情况，请确定是否恢复？&quot;)) {
+      return true;
+    } else {
+      return false;
+    }" type="submit" id="edit-recovery" name="op" value="恢复备份"></div><input type="hidden"
+                                        name="form_build_id" value="form-rZG8S6EY77f1XwGVmzJkSVKEyEEVJu_grn4u3OZUFzw">
+                                    <input type="hidden" name="form_token" value="2HPwUPqrwf7rdpbOAxtzMkO8FKtXUOi1EmmC-D0tBa4">
+                                    <input type="hidden" name="form_id" value="school_users_upgrade">
+                                </div>
+                            </form>
+                        </div>
+
+
+
+
+
+                        <!--大家在这上面写各自的主体内容-->
+
+                    </div>
+                </div>
+            </div>
+            <!--主体内容-->
+            <div class="region">
+
+            </div>
+            <!--左边导航-->
+        </div>
+    </div>
+</body>
+
+</html>

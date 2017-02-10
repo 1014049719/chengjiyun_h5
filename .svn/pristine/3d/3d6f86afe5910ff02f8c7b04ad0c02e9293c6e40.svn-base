@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>系统管理</title>
+    <!--公共css样式-->
+    <link href="../css/cjy_common.css" rel="stylesheet"/>
+
+    <link href="css/systemManage.css" rel="stylesheet"/>
+    <!--加载jquery库-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--公=共js样式-->
+    <script src="../js/cjy.js"></script>
+</head>
+
+<body>
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+
+    </div>
+    <!--下部分-->
+    <div class="lump clearfix">
+        <!--主体内容-->
+        <div class="main-content">
+            <div class="section-wrapper">
+                <div class="section">
+                    <h1 class="page-title">系统管理 - 通知教师启用</h1>
+                    <div class="div_content">
+                        <div class="div_content_student">
+                            在完成成绩分析后，学校领导和老师们即可在线查看丰富生动的分析图表！<br>
+                            以下是为您准备通知教师使用的资料：<br>
+                            下载教师账号初始密码表和使用指引文档，发送给老师们，即可参照指引文档登录和使用系统。<br>
+                            <br>
+                            请提醒老师们登录后尽快修改密码，并在个人设置中输入绑定常用邮箱，以便日后忘记密码时可通过邮箱重设密码。<br>
+                            若老师已登录系统并修改了密码，则其密码不会在教师账号密码表中出现。<br>
+                            <br>
+                            <a href="http://chengjiyun.com/democz?q=school-users/download-init-password/3207/d36r0bcmFPZ4t90nZRmprfd2iU2pENIggy3Xm2L-Pfw/5/7"
+                               class="blue-button">+下载教师账号密码表</a><br><br>
+                            <a href="http://chengjiyun.com/democz/sites/democz/modules/school_users/templates/成绩云-教师使用指引.doc"
+                               class="blue-button">+下载教师使用指引</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--左边导航-->
+        <div class="region">
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

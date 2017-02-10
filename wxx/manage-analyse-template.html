@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>吴小祥</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+            <!--<img class="log" src="img/log.png" />
+            <ul class="main-menu-links">
+                <li class="main-menu-transcripts"><a href="#">成绩</a></li>
+                <li class="main-menu-messages"><a href="#">信息</a></li>
+                <li class="main-menu-setting"><a href="#">设置</a></li>
+            </ul>
+            <ul class="main-menu-right">
+                <li class="name"><a href="#">test</a></li>
+                <li class="logout"><a href="#">退出</a></li>
+                <li><a href="#">提意见</a></li>
+                <li><a href="#">帮助</a></li>
+            </ul>-->
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+
+
+
+                        <h1 class="title" id="page-title">系统管理 - 教师</h1>
+
+                        <div class="content">
+                            <form action="http://chengjiyun.com/democz/?q=transcripts/config-template" method="post" id="weike-transcripts-config-template"
+                                accept-charset="UTF-8">
+                                <div>
+                                    <fieldset class="form-wrapper" id="edit-fieldset1">
+                                        <legend><span class="fieldset-legend"><a href="http://chengjiyun.com/wiki/index.php?title=%E5%88%86%E6%9E%90%E5%86%8C%E6%A8%A1%E6%9D%BF" target="_blank" style="text-decoration: none;">分析册模板</a></span></legend>
+                                        <div
+                                            class="fieldset-wrapper">
+                                            <ul>
+                                                <li>在这里创建分析模板，然后在创建考试分析时可直接选用，减少重复工作。</li>
+                                                <li>每个年级可以按自己的偏好创建独立的模板，也可以共用模板。注意标明模板名称， 例如：2013级高三分析模板 ，2014级高一未分班模板。</li>
+                                                <li>模板中没有勾选的项目，在分析时不可再临时添加，但模板中已选的项目在分析时可以临时减少。</li>
+                                            </ul>
+                                            <table class="sticky-header" style="position: fixed; top: 0px; left: 153px; visibility: hidden; width: 1163px;">
+                                                <thead style="">
+                                                    <tr>
+                                                        <th style="width: 600px; display: table-cell;">名称</th>
+                                                        <th style="width: 251px; display: table-cell;">编辑</th>
+                                                        <th style="width: 251px; display: table-cell;">删除</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <table class="sticky-enabled tableheader-processed sticky-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>名称</th>
+                                                        <th>编辑</th>
+                                                        <th>删除</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="odd">
+                                                        <td>初一</td>
+                                                        <td><a href="http://chengjiyun.com/democz/?q=transcripts/config-template/edit/1">编辑</a></td>
+                                                        <td><a href="http://chengjiyun.com/democz/?q=transcripts/config-template/delete/1">删除</a></td>
+                                                    </tr>
+                                                    <tr class="even">
+                                                        <td>初二</td>
+                                                        <td><a href="http://chengjiyun.com/democz/?q=transcripts/config-template/edit/2">编辑</a></td>
+                                                        <td><a href="http://chengjiyun.com/democz/?q=transcripts/config-template/delete/2">删除</a></td>
+                                                    </tr>
+                                                    <tr class="odd">
+                                                        <td>初三</td>
+                                                        <td><a href="http://chengjiyun.com/democz/?q=transcripts/config-template/edit/3">编辑</a></td>
+                                                        <td><a href="http://chengjiyun.com/democz/?q=transcripts/config-template/delete/3">删除</a></td>
+                                                    </tr>
+                                                    <tr class="even">
+                                                        <td>初三统考分析册</td>
+                                                        <td><a href="http://chengjiyun.com/democz/?q=transcripts/config-template/edit/4">编辑</a></td>
+                                                        <td><a href="http://chengjiyun.com/democz/?q=transcripts/config-template/delete/4">删除</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <a href="http://chengjiyun.com/democz/?q=transcripts/config-template/add" class="button">新建</a></div>
+                                </fieldset>
+                                <fieldset class="form-wrapper" id="edit-fieldset2">
+                                    <legend><span class="fieldset-legend">配置</span></legend>
+                                    <div class="fieldset-wrapper">级差基准线<a href="http://chengjiyun.com/wiki/index.php?title=%E5%9F%BA%E5%87%86%E5%9D%87%E5%88%86"
+                                            target="_blank"> (说明)</a>
+                                        <div style="margin-left: 20px;">
+                                            <div class="form-item form-type-checkbox form-item-baseline0">
+                                                <input type="checkbox" id="edit-baseline0" name="baseline0" value="1" checked="checked" class="form-checkbox">                                                <label class="option" for="edit-baseline0">实验班 </label>
+
+                                            </div>
+                                            <div class="form-item form-type-checkbox form-item-baseline1">
+                                                <input type="checkbox" id="edit-baseline1" name="baseline1" value="1" checked="checked" class="form-checkbox">                                                <label class="option" for="edit-baseline1">普通班 </label>
+
+                                            </div>
+                                            <div class="form-item form-type-checkbox form-item-baseline2">
+                                                <input type="checkbox" id="edit-baseline2" name="baseline2" value="1" checked="checked" class="form-checkbox">                                                <label class="option" for="edit-baseline2">重点班 </label>
+
+                                            </div>
+                                        </div>教师姓名<a href="http://chengjiyun.com/wiki/index.php?title=%E8%AE%BE%E7%BD%AE%E5%88%86%E6%9E%90%E7%BB%93%E6%9E%9C%E4%B8%AD%E6%98%AF%E5%90%A6%E6%98%BE%E7%A4%BA%E8%80%81%E5%B8%88%E5%A7%93%E5%90%8D"
+                                            target="_blank"> (说明)</a>
+                                        <div class="form-item form-type-select form-item-teacher-name">
+                                            <select id="edit-teacher-name" name="teacher_name" class="form-select"><option value="0" selected="selected">显示教师姓名</option><option value="1">隐藏教师姓名</option></select>
+                                        </div>
+                                        <div class="container-inline">科目名称：
+                                            <div class="form-item form-type-textfield form-item-chinese">
+                                                <input type="text" id="edit-chinese" name="chinese" value="语文" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-maths">
+                                                <input type="text" id="edit-maths" name="maths" value="数学" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-english">
+                                                <input type="text" id="edit-english" name="english" value="英语" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-physics">
+                                                <input type="text" id="edit-physics" name="physics" value="物理" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-chemistry">
+                                                <input type="text" id="edit-chemistry" name="chemistry" value="化学" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-biology">
+                                                <input type="text" id="edit-biology" name="biology" value="生物" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-politics">
+                                                <input type="text" id="edit-politics" name="politics" value="政治" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-history">
+                                                <input type="text" id="edit-history" name="history" value="历史" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-geography">
+                                                <input type="text" id="edit-geography" name="geography" value="地理" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-pe">
+                                                <input type="text" id="edit-pe" name="pe" value="体育" size="8" maxlength="128" class="form-text">
+                                            </div>
+                                        </div><br>主科：
+                                        <div class="container-inline">
+                                            <div class="form-item form-type-textfield form-item-major7">
+                                                <label for="edit-major7">初一 </label>
+                                                <input type="text" id="edit-major7" name="major7" value="语文+数学+英语+体育" size="60" maxlength="128" class="form-text">
+                                            </div>
+                                        </div>
+                                        <div class="container-inline">
+                                            <div class="form-item form-type-textfield form-item-major8">
+                                                <label for="edit-major8">初二 </label>
+                                                <input type="text" id="edit-major8" name="major8" value="语文+数学+英语+物理+体育" size="60" maxlength="128" class="form-text">
+                                            </div>
+                                        </div>
+                                        <div class="container-inline">
+                                            <div class="form-item form-type-textfield form-item-major9">
+                                                <label for="edit-major9">初三 </label>
+                                                <input type="text" id="edit-major9" name="major9" value="语文+数学+英语+物理+化学+体育" size="60" maxlength="128" class="form-text">
+                                            </div>
+                                        </div><input type="submit" id="edit-save" name="op" value="保存" class="form-submit"></div>
+                                </fieldset>
+                                <input type="hidden" name="character_count" value="3">
+                                <input type="hidden" name="form_build_id" value="form-y1lr1WwGfRNeBw7ZNBNf14dch7-eKn2l9Q1WnGL7P9w">
+                                <input type="hidden" name="form_token" value="rYxpZNQntJT7py9_i4hwtTxqHp_4lU_pVV2KeOl4ImM">
+                                <input type="hidden" name="form_id" value="weike_transcripts_config_template">
+                        </div>
+                        </form>
+                    </div>
+
+
+
+
+                    <!--大家在这上面写各自的主体内容-->
+
+                </div>
+            </div>
+        </div>
+        <!--主体内容-->
+        <div class="region">
+            <!--<div class="contenter">
+                    <ul class="menu">
+                        <li class="menu2-title menu2-user-manage">系统管理</li>
+                        <li><a href="/democz/?q=transcripts/user/school">学校</a></li>
+                        <li><a href="/democz/?q=transcripts/user/grade/9">初三</a></li>
+                        <li><a href="/democz/?q=transcripts/user/grade/8">初二</a></li>
+                        <li><a href="/democz/?q=transcripts/user/grade/7">初一</a></li>
+                        <li><a href="/democz/?q=transcripts/user/grade/graduate">已毕业年级</a></li>
+                    </ul>
+                    <ul class="menu">
+                        <li class="menu2-title menu2-transcripts-manage">教学管理</li>
+                        <li><a href="/democz/?q=transcripts/search-exam">考试分析</a></li>
+                        <li><a href="/democz/?q=transcripts/my-exam">考试管理</a></li>
+                        <li><a href="/democz/?q=transcripts/grade/9">初三</a></li>
+                        <li><a href="/democz/?q=transcripts/grade/8" class="active">初二</a></li>
+                        <li><a href="/democz/?q=transcripts/grade/7">初一</a></li>
+                    </ul>
+                </div>-->
+        </div>
+        <!--左边导航-->
+    </div>
+    </div>
+</body>
+
+</html>

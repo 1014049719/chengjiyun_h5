@@ -1,0 +1,171 @@
+body, body.overlay {
+    color: #3b3b3b;
+}
+table {
+    border: 0 none;
+    border-spacing: 0;
+    font-size: 0.857em;
+    margin: 10px 0;
+    width: 100%;
+    border-collapse: collapse;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+table.page6-table1 {
+    width: auto;
+}
+table table {
+    font-size: 1em;
+}
+table tr th {
+    background: rgba(0, 0, 0, 0.51) none repeat scroll 0 0;
+    border-bottom-style: none;
+}
+table tr th, table tr td {
+    margin: 0;
+    padding: 1px 0;
+}
+table tr th, table tr th a, table tr th a:hover {
+    color: #fff;
+    font-weight: bold;
+}
+table tbody tr th {
+    vertical-align: top;
+}
+tr td, tr th {
+    border: 1px solid #fff;
+    padding: 4px 9px;
+    text-align: left;
+}
+tr.odd {
+    background: rgba(0, 0, 0, 0.106) none repeat scroll 0 0;
+}
+tr, tr.even {
+    background: rgba(0, 0, 0, 0.063) none repeat scroll 0 0;
+}
+tr.even {
+    background-color: #fff;
+}
+table ul.links {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+table ul.links li {
+    padding: 0 1em 0 0;
+}
+table.invisible tr {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+table.oil-save tr th {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #000;
+    color: #000;
+}
+table.oil-save tr {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+table.oil-save tr td {
+    border: 1px solid #000;
+}
+table a.button {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.page6-table1 tr td, .page6-table1 tr th {
+    font-size: 1em;
+    margin: 0;
+    padding: 0 2px;
+    text-align: center;
+}
+.page6-table1 tr th:first-child, .page6-table1 tr td:first-child {
+    margin: 2px;
+    padding: 4px;
+    text-align: left;
+    width: 80px;
+}
+.page6-table1 th {
+    width: 60px;
+}
+table.page6-table1 {
+    width: auto;
+}
+
+
+fieldset {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-bottom: 32px;
+    margin-top: 10px;
+    padding: 0 0 10px;
+    position: relative;
+    top: 12px;
+}
+.fieldset-wrapper {
+    margin-top: 25px;
+    position: relative; overflow: hidden; width: 1000px; height: 300px;
+}
+fieldset.collapsed {
+    background: transparent none repeat scroll 0 0;
+    border-radius: 0;
+}
+fieldset legend {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #dbdbdb none repeat scroll 0 0;
+    border-color: #ccc #ccc;
+    border-image: none;
+    border-style: solid solid none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-width: 1px 1px medium;
+    color: #3b3b3b;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+    height: 2em;
+    left: -1px;
+    line-height: 2;
+    padding: 0;
+    position: absolute;
+    text-indent: 10px;
+    text-shadow: 0 1px 0 #fff;
+    top: -12px;
+    width: 100%;
+}
+fieldset.collapsed legend {
+    border-radius: 4px;
+}
+fieldset legend a {
+    color: #3b3b3b;
+}
+fieldset legend a:hover, fieldset legend a:focus, fieldset legend a:active {
+    color: #000;
+}
+fieldset .fieldset-wrapper {
+    padding: 0 10px;
+}
+fieldset .fieldset-description {
+    color: #3c3c3c;
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: 1em;
+    margin-top: 5px;
+}
+.backToTop {
+    background-color: #000;
+    bottom: 100px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 12px;
+    line-height: 1.2;
+    opacity: 0.6;
+    padding: 5px 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    width: 18px;
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>系统管理 - 批量修改学生信息</title>
+    <!--公共css样式-->
+    <link href="../css/cjy_common.css" rel="stylesheet"/>
+    <link href="css/systemManage.css" rel="stylesheet"/>
+
+    <!--加载jquery库-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--公=共js样式-->
+    <script src="../js/cjy.js"></script>
+    <script src="js/addStudentAccount.js"></script>
+</head>
+
+<body>
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+
+    </div>
+    <!--下部分-->
+    <div class="lump clearfix">
+        <!--主体内容-->
+        <div class="main-content">
+            <div class="section-wrapper">
+                <div class="section">
+                    <h1 class="page_title">系统管理 - 批量修改学生信息</h1>
+                    <div class="div_content">
+
+                        <form class="block-progress" enctype="multipart/form-data"
+                              action="/democz/?q=transcripts/user/grade/7/update/2015" method="post"
+                              id="weike-transcripts-user-grade-update" accept-charset="UTF-8">
+                            <div>
+                                <div id="replace_textfield_div"></div>
+                                在年级发生重新分班、整体学号变更，或需要对学生属性整体更新
+                                （补充性别、考生类别信息等）时，请使用本页面进行操作。<br>
+                                <br>
+                                <span class="triangle-item">1</span>
+                                下载当前学生信息：<a href="http://chengjiyun.com/democz/?q=school-users/download/3207/ZD7B5exOSk251rKTIJ5UFSA7kf7h7A3Fq9B_kZ_2-VY/student/7/2015
+      " class="blue-button">点击下载</a><br>
+                                <br>
+                                <span class="triangle-item">2</span>填入或更新正确信息
+                                <div class="item-indent"><span style="color:rgb(112, 158, 231)">
+2.1 若学生排序没有大的变动，可以基于当前表格进行编辑：</span><br>
+                                    在下载的表格中保持账号不变，修改其他有变动的信息，然后另存为新的学生信息表。<br>
+                                    在第3步中导入新表即可完成批量修改。<br>
+                                    <img src="http://chengjiyun.com/democz/sites/democz/modules/weike_transcripts/image/user_update_tips1.jpg"><br>
+<span style="color:rgb(112, 158, 231)">
+2.2 若需要更新的信息表的名单排序和当前排序差异较大，请按以下步骤进行：</span><br>
+                                    在下载的表格中，清空除第一行以外的信息，形成模板空表；<br>
+                                    把更新的信息粘贴到模板空表中: 姓名列，以及其他有更新内容的列（例如新的学号，新的班别），留空『账号』列；<br>
+                                    导入该文件，成绩云将自动按名字搜索填入对应的账号，返回一份填好账号的表格文件给您。<br>
+                                    <div class="container-inline">
+                                        <div class="form-item form-type-file form-item-files-file1">
+                                            <input id="edit-file1" name="files[file1]" size="60" class="form-file"
+                                                   type="file">
+                                        </div>
+                                        <input class="blue-button form-submit" id="edit-fill-id" name="op"
+                                               value="自动填写账号" type="submit"></div>
+                                    <span style="color:rgb(112, 158, 231)">有两种情况需要您补充处理：</span><br>
+                                    1）<span style="color:rgb(112, 158, 231)">重名</span>：『账号』列显示『重名』，『候选账号』列提示重名的账号；<br>
+                                    请打开下载的原表格中查询各账号对应的学生原来的学号和班别，然后在新表格中填写正确对应的账号。举例：下图中名为『齐花』的学生存在重名，现在我们需要查明，被分配到3班，新学号20130323的学生，是原来在1班的20130119还是原来在13班的20131340，查明填写正确账号到『账号』列。<br>
+                                    2）<span style="color:rgb(112, 158, 231)">查无此名</span>：「账号」列显示『错误』，『候选账号』列显示『查无此名』；
+                                    请查明该学生是否姓名存在错别字导致搜索不匹配，或者该生是新生，请首先为其<a
+                                            href="/democz/?q=transcripts/user/grade/add-student/7/one">创建账号</a>。<br>
+                                    <img src="http://chengjiyun.com/democz/sites/democz/modules/weike_transcripts/image/user_update_tips2.jpg">
+                                </div>
+                                <span class="triangle-item">3</span>导入更新后的账户信息表：
+                                现在可以导入更新后的信息表<br>
+                                在导入前还可以选择进行『检查用户完整性』，例如本年级有1000人，新导入的表格只有990人，<br>
+                                成绩云会告诉您：有哪些学生没有出现在新表中，以便核实是存在疏漏，还是这些学生已休学退学。<br>
+                                <div class="form-item form-type-file form-item-files-file2">
+                                    <input id="edit-file2" name="files[file2]" size="60" class="form-file" type="file">
+                                </div>
+                                <div class="form-item form-type-checkbox form-item-overwrite-password">
+                                    <input id="edit-overwrite-password" name="overwrite_password" value="1"
+                                           class="form-checkbox" type="checkbox"> <label class="option"
+                                                                                         for="edit-overwrite-password">覆盖密码（勾选后，系统内若已存在该姓名学号的账号，会以导入文件中的密码覆盖其原来的密码，请谨慎使用，若对此存在疑问，请咨询成绩云的客服人员） </label>
+
+                                </div>
+                                <input class="blue-button form-submit" id="edit-check-complete" name="op"
+                                       value="检查账号完整性" type="submit"><input
+                                    class="blue-button form-submit ajax-processed"
+                                    onclick="jQuery(&quot;#replace_textfield_div&quot;).hide();return true;"
+                                    id="edit-add-batch" name="op" value="导入账号表" type="submit"><a class="blue-button"
+                                                                                                 href="http://chengjiyun.com/democz/?q=transcripts/user/recovery/1"
+                                                                                                 target="_blank">恢复备份</a><input
+                                    name="form_build_id" value="form-X2QqlgoybU1uxGvcAe-Elt-dlPCcYxSCewSP9-jQlVE"
+                                    type="hidden">
+                                <input name="form_token" value="b7JF6ktKnPSBBOoR7Zz2Ecmf11p8jlRXfcFd3idXF6s"
+                                       type="hidden">
+                                <input name="form_id" value="weike_transcripts_user_grade_update" type="hidden">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--左边导航-->
+        <div class="region">
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

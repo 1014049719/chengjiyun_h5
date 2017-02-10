@@ -1,0 +1,602 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>初三 | 初中演示环境</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <link type="text/css" rel="stylesheet" href="css/teacher-list.css"  />
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <script src="js/teacher-list.js"></script>
+    <script src="../js/echarts.js"></script>
+    <!--
+    <script src="../js/handlebars-1.0.0.beta.6.js"></script>
+    -->
+    <script type="text/javascript" src="../js/handlebars-v4.0.5.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+    <style>
+
+    </style>
+    <script >
+        jQuery(function(){
+            jQuery("#teacher_source_course li:eq(0)").addClass("focused-course-button");
+        })
+
+        function focused_course_button(id) {
+            jQuery("#"+id).addClass("focused-course-button");
+            jQuery(jQuery("#"+id).siblings()).removeClass("focused-course-button");
+            gen_teacher_chart();
+        }
+
+        function focused_tab(id, div_id) {
+            jQuery("#"+id).addClass("active");
+            jQuery(jQuery("#"+id).siblings()).removeClass("active");
+            jQuery("#"+div_id).show();
+            jQuery(jQuery("#"+div_id).siblings()).hide();
+
+            //jQuery(".region-sidebar-first").css("height", "900");
+        }
+
+    </script>
+</head>
+
+<body>
+<div class="warp">
+    <div class="header">
+    </div>
+    <!--头部-->
+    <div class="lump clearfix">
+        <div class="main-content">
+            <div class="section-wrapper">
+                <div class="section">
+                    <h1 class="page-title">初三</h1>
+                    <!--大家在这里写各自的主体内容-->
+                    <div class="search_inline" style=" border-bottom: 1px solid #ccc;padding-bottom: 10px;padding-top: 10px;">
+                        <input class="gray_button active" name="op" value="趋势分析"type="submit"  id="edit-trend-tab" onclick="focused_tab('edit-trend-tab', 'grade-trend');
+      return false;">
+                        <input class="gray_button" name="op" value="任教名单" type="submit" id="edit-head-teacher-tab" onclick="focused_tab('edit-head-teacher-tab', 'head-teacher');
+      return false;">
+                        <input class="gray_button" name="op" value="师资团队" type="submit" id="edit-teacher-source-tab" onclick="focused_tab('edit-teacher-source-tab', 'teacher-source');
+      return false;">
+                        <div class="right">
+                            <input placeholder="输入学生姓名或学号" name="search_box" value="" size="60" maxlength="20" class="form_text" type="text">
+                            <input name="op" value="搜索" class="form_submit" type="submit">
+                        </div>
+                    </div>
+                    <!--各标签主题内容-->
+                    <div class = "content">
+                      <!--趋势分析-->
+                      <div id="grade-trend" style="display: block;">
+                          <div class="container-inline" style=" display: block;padding-bottom: 10px;padding-top: 10px;">
+                              <div class="form-item form-type-select form-item-course-0" style="display: inline;">
+                              <label for="edit-course-0">统计科目 </label>
+                              <select onchange="gen_chart(0,'grade');" id="edit-course-0" name="course_0" class="form-select">
+                                  <option value="common_total">主科</option>
+                                  <option value="total">总分</option>
+                                  <option value="chinese">语文</option>
+                                  <option value="maths">数学</option>
+                                  <option value="english">英语</option>
+                                  <option value="physics">物理</option>
+                                  <option value="chemistry">化学</option>
+                                  <option value="biology">生物</option>
+                                  <option value="politics">政治</option>
+                                  <option value="history">历史</option>
+                                  <option value="geography">地理</option>
+                                  <option value="pe">体育</option>
+                              </select>
+                              </div>
+                              <div class="form-item form-type-select form-item-data-type-0" style="display: inline;">
+                                  <label for="edit-data-type-0">数据类型 </label>
+                                  <select onchange="gen_chart(0,'grade');" id="edit-data-type-0" name="data_type_0" class="form-select">
+                                      <option value="rank">名次</option>
+                                      <option value="difference">级差</option>
+                                      <option value="good_rate">优秀率</option>
+                                      <option value="good_rate_rank">优秀率名次</option>
+                                      <option value="rate">良好率</option>
+                                      <option value="rate_rank">良好率名次</option>
+                                      <option value="pass_rate">及格率</option>
+                                      <option value="pass_rate_rank">及格率名次</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div>
+                              <div>
+                              <img src="http://chengjiyun.com/democz/sites/democz/modules/weike_transcripts/png/help-icon.png">
+                              <a href="http://chengjiyun.com/wiki/index.php?title=%E5%B9%B4%E7%BA%A7%E8%B6%8B%E5%8A%BF%E5%9B%BE" target="_blank" style="text-decoration: none; color: #0071B3;">【图表说明】</a>
+                          </div>
+                              <div id="container0" style="min-width: 400px; height: 600px; margin: 0 auto" data-highcharts-chart="0">
+                              </div>
+                          </div>
+                          <div style="text-align:center; color:#6D869F; font-size:12px;padding-top: 10px;padding-bottom: 20px">点击图例可单独开关显示该线条，点击“全部”可全部开关显示。</div>
+                    </div>
+                      <!--任教名单-->
+                      <div id="head-teacher" style="display: none;">
+                        <span style="color: red;">（点击班别，查看该班的教学管理页面）</span>
+                        <table class="sticky-enabled tableheader-processed sticky-table">
+                            <thead>
+                            <tr>
+                                <th>班别</th>
+                                <th>科别</th>
+                                <th>特色班</th>
+                                <th>班主任</th>
+                                <th>目标设定</th>
+                                <th>语文</th>
+                                <th>数学</th>
+                                <th>英语</th>
+                                <th>物理</th>
+                                <th>化学</th>
+                                <th>生物</th>
+                                <th>政治</th>
+                                <th>历史</th>
+                                <th>地理</th>
+                                <th>体育</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tableList">
+
+                           </tbody>
+                    </table>
+                    </div>
+                      <!--师资团队-->
+                      <div id="teacher-source" style="display: none; padding-top: 10px;">
+                        <ul id="teacher_source_course" style="line-height: 28px; white-space: nowrap;; padding: 0 0 0 0;">
+                            <li id="chinese">
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('chinese')">语文</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="maths" >
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('maths')">数学</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="english" >
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('english')">英语</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="physics" >
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('physics')">物理</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="chemistry" >
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('chemistry')">化学</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="biology" >
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('biology')">生物</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="politics" >
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('politics')">政治</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="history" >
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('history')">历史</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="geography" >
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('geography')">地理</a>
+                            </li>
+                            <li style="list-style-type: none; display: block; float: left;">　|　</li>
+                            <li id="pe">
+                                <a style="text-decoration: none;" href="javascript:void(0)" onclick="focused_course_button('pe')">体育</a>
+                            </li>
+                        </ul>
+                        <div class="clearfix">
+
+                        </div>
+                        <div class="container-inline">
+                            <div class="form-item form-type-select form-item-teacher-data-types">
+                                <label for="edit-teacher-data-types">数据类型 </label>
+                                <!--onchange="document.getElementById(&quot;edit-teacher-data-tab&quot;).click();"-->
+                                <select id="edit-teacher-data-types" name="teacher_data_types" class="form-select">
+                            <option value="sum_people">合计人数</option>
+                            <option value="sum_avg_score">合计均分</option>
+                            <option value="avg_score_diff">均分级差</option>
+                            <option value="avg_score_rank">均分排名</option>
+                            <option value="sum_excellent_rate">合计优秀率</option>
+                            <option value="excellent_rate_rank">优秀率排名</option>
+                            <option value="sum_good_rate">合计良好率</option>
+                            <option value="good_rate_rank">良好率排名</option>
+                            <option value="sum_learn_difficult">学困生人数</option>
+                        </select>
+                            </div>
+                            <input style="display: none;" onclick="gen_teacher_chart();return false;" type="submit" id="edit-teacher-data-tab" name="op" value="切换" class="form-submit">
+                        </div>
+                        <div id="teacher_container1" style="min-width : 400px; height: 600px; margin: 0px auto;">
+
+                        </div>
+                        <div style="text-align: center;">
+                            <h3>教师数据对比</h3>
+                        </div>
+                        <span style="float: left;">
+                            <div class="container-inline">
+                                <div class="form-item form-type-select form-item-exam1-select">
+                                    <label for="edit-exam1-select">考试1 </label>
+                                    <select id="edit-exam1-select" name="exam1_select" class="form-select">
+                                        <option value="28">初三下期末</option>
+                                        <option value="22">初三下期中</option>
+                                        <option value="21">初三上期末</option>
+                                        <option value="18">初三上期中</option>
+                                        <option value="17">初二下期末</option>
+                                        <option value="15">初二下期中</option>
+                                        <option value="14">初二上期末</option>
+                                        <option value="13">初二上期中</option>
+                                        <option value="12">初一下期末</option>
+                                        <option value="11">初一下期中</option>
+                                        <option value="10">初一上期末</option>
+                                        <option value="9">初一上期中</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="container-inline">
+                                <div class="form-item form-type-select form-item-exam2-select">
+                                    <label for="edit-exam2-select">考试2 </label>
+                                    <select id="edit-exam2-select" name="exam2_select" class="form-select">
+                                        <option value="28">初三下期末</option>
+                                        <option value="22">初三下期中</option>
+                                        <option value="21">初三上期末</option>
+                                        <option value="18">初三上期中</option>
+                                        <option value="17">初二下期末</option>
+                                        <option value="15">初二下期中</option>
+                                        <option value="14">初二上期末</option>
+                                        <option value="13">初二上期中</option>
+                                        <option value="12">初一下期末</option>
+                                        <option value="11">初一下期中</option>
+                                        <option value="10">初一上期末</option>
+                                        <option value="9">初一上期中</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </span>
+                        <span style="float: left; margin-left: 10px;">
+                            <input type="button" id="compare" value="对比" class="form-submit">
+                            <input type="button" value="下载" class="form-submit" onclick="document.getElementById('edit-download-teacher-data-compare').click();">
+                        </span>
+                        <div class="clearfix">
+
+                        </div>
+                        <div id="teacher_data_compare">
+
+                        </div>
+                        <input style="display: none" onclick="window.open('http://chengjiyun.com/democz/?q=transcripts/my-view/download-teacher-compare/'
+      + jQuery('#edit-exam1-select').val() + '/' + jQuery('#edit-exam2-select').val() + '/'
+       + jQuery('#edit-grade').val() + '/' + jQuery('.focused-course-button').attr('id'));return false;" type="submit" id="edit-download-teacher-data-compare" name="op" value="下载教师数据对比excel" class="form-submit">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Handlebars.js模版-->
+        <script id="table-template" type="text/x-handlebars-template">
+            {{#each head_teacher}}
+            {{#if 1}}
+            {{#isodd @index}}
+            <tr class = "odd">
+            {{else}}
+            <tr class = "even">
+            {{/isodd}}
+            {{/if}}
+                <td>{{class_name}}</td>
+                <td>{{subject}}</td>
+                <td>{{special}}</td>
+                <td>{{header_teacher}}</td>
+                <td>{{target}}</td>
+                <td>{{chinese}}</td>
+                <td>{{math}}</td>
+                <td>{{english}}</td>
+                <td>{{physical}}</td>
+                <td>{{chemistry}}</td>
+                <td>{{biology}}</td>
+                <td>{{political}}</td>
+                <td>{{history}}</td>
+                <td>{{geography}}</td>
+                <td>{{pe}}</td>
+            </tr>
+            {{/each}}
+        </script>
+        <!--主体内容-->
+        <div class="region">
+
+        </div>
+        <!--左边导航-->
+    </div>
+</div>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById("container0"));
+    option = {
+        title:{
+            text:'各班趋势',
+            subtext:'点击鼠标拖到可放大',
+            x:'center',
+            textStyle:{
+                fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                fontSize: 16,
+                color: '#3E576F',
+                fill: '#3E576F'
+            },
+            subtextStyle:{
+                fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                fontSize: 12,
+                color: '#6D869F',
+                fill: '#6D869F'
+            }
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: function(params) {
+                return params.name + '<br/>'
+                        + params.seriesName + '班 : 第' + -params.value + '名 ';
+            }
+        },
+        legend: {
+            data:['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+            y:'bottom',
+            borderColor: 'rgba(144,144,144,1)',
+            borderWidth: 1,
+            padding: 5,
+            itemGap: 20,
+            textStyle: {
+                fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                fontSize: 12,
+            }
+
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                position: 'bottom',
+                boundaryGap: true,
+                axisLine : {    // 轴线
+                    show: false,
+                },
+                axisTick : {    // 轴标记
+                    length:0
+                },
+                splitLine:{
+                  show:false
+                },
+                axisLabel : {
+                    show:true,
+                    interval: 0,    // {number}
+                    rotate: -45,
+                    margin: -15,
+                    textStyle: {
+                        fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                        fontSize: 13,
+                        color: '#6D869F',
+                        fill: '#6D869F',
+                        fontStyle: 'italic',
+                    }
+                },
+                data : [
+                    '初一上期中','初一上期末','初一下期中','初一下期末','初二上期中','初二上期末','初二下期中','初二下期末','初三上期中','初三上期末','初三下期中','初三下期末'
+                ]
+            },
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                position: 'left',
+                min:-12,
+                axisLine : {    // 轴线
+                    show: false,
+                },
+                axisTick : {    // 轴标记
+                    length: 0,
+                },
+                axisLabel : {
+                    show:true,
+                    interval: 'auto',    // {number}
+                    margin: 18,
+                    formatter: function(v){
+                        return - v;
+                    },
+
+                    textStyle: {
+                        fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                        fontSize: 12,
+                        color: '#6D869F',
+                        fill: '#6D869F'
+                    }
+                },
+            },
+        ],
+        series : [
+            {
+                name: '1',
+                type: 'line',
+                symbol: 'circle',  // 数据级个性化拐点图形
+                symbolSize : 10,
+                itemStyle : { normal: {label : {
+                    show: true,
+                    formatter: function(params) {
+                        return params.seriesName ;
+                    },
+                    textStyle : {
+                        fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                        fontSize: 12,
+                        color: '#6D869F',
+                        fill: '#6D869F'
+                    }
+                }}},
+                data: (function(){
+                    var oriData = [6, 6, 7, 5, 7, 8, 7, 6, 7, 9, 8, 1];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+
+            },
+            {
+                name: '2',
+                type: 'line',
+                symbol: 'triangle',  // 数据级个性化拐点图形
+                symbolSize : 10,
+                itemStyle : { normal: {label : {
+                    show: true,
+                    formatter: function(params) {
+                        return params.seriesName ;
+                    },
+                    textStyle : {
+                        fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                        fontSize: 12,
+                        color: '#6D869F',
+                        fill: '#6D869F'
+                    }
+                }}},
+                data: (function(){
+                    var oriData = [7, 8, 10, 8, 6, 9, 6, 8, 10, 8, 9, 2];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            },
+            {
+                name:'3',
+                type: 'line',
+                symbol: 'diamond',  // 数据级个性化拐点图形
+                symbolSize : 10,
+                itemStyle : { normal: {label : {
+                    show: true,
+                    formatter: function(params) {
+                        return params.seriesName ;
+                    },
+                    textStyle : {
+                        fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                        fontSize: 12,
+                        color: '#6D869F',
+                        fill: '#6D869F'
+                    }
+                }}},
+                data: (function(){
+                    var oriData = [10, 9, 7, 10, 8, 9, 8, 8, 8, 8, 8, 8];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            },
+            {
+                name:'4',
+                type: 'line',
+                symbol: 'arrow',  // 数据级个性化拐点图形
+                symbolSize : 10,
+                itemStyle : { normal: {label : {
+                    show: true,
+                    formatter: function(params) {
+                        return params.seriesName ;
+                    },
+                    textStyle : {
+                        fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+                        fontSize: 12,
+                        color: '#6D869F',
+                        fill: '#6D869F'
+                    }
+                }}},
+                data: (function(){
+                    var oriData = [10, 9, 7, 10, 8, 9, 8, 8, 8, 8, 8, 8];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            }
+            ,
+            {
+                name:'5',
+                type: 'line',
+                data: (function(){
+                    var oriData = [10, 9, 7, 10, 8, 9, 8, 8, 8, 8, 8, 8];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            }
+            ,
+            {
+                name:'6',
+                type: 'line',
+                data: (function(){
+                    var oriData = [10, 9, 7, 10, 8, 9, 8, 8, 8, 8, 8, 8];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            }
+            ,
+            {
+                name:'7',
+                type: 'line',
+                data: (function(){
+                    var oriData = [10, 9, 7, 10, 8, 9, 8, 8, 8, 8, 8, 8];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            }
+            ,
+            {
+                name:'8',
+                type: 'line',
+                data: (function(){
+                    var oriData = [10, 9, 7, 10, 8, 9, 8, 8, 8, 8, 8, 8];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            }
+            ,
+            {
+                name:'9',
+                type: 'line',
+                data: (function(){
+                    var oriData = [10, 9, 7, 10, 8, 9, 8, 8, 8, 8, 8, 8];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            }
+            ,
+            {
+                name:'10',
+                type: 'line',
+                data: (function(){
+                    var oriData = [10, 9, 7, 10, 8, 9, 8, 8, 8, 8, 8, 8];
+                    var len = oriData.length;
+                    while(len--) {
+                        oriData[len] *= -1;
+                    }
+                    return oriData;
+                })()
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
+</body>
+
+</html>
+

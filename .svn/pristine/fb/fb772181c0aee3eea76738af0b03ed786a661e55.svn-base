@@ -1,0 +1,86 @@
+/* 小题分析编辑页面CSS */
+
+a:link,
+a::visited {
+    text-decoration: none;
+}
+
+a {
+    color: #0071B3;
+    cursor: auto;
+}
+
+.content {
+    margin: 15px 0 0 0;
+}
+
+.model-content p {
+    display: inline;
+}
+
+.course-als-item {
+    margin: 20px 50px 0 0;
+    border: 1px solid #cccccc;
+    -khtml-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding-bottom: 15px;
+}
+
+.course-als-title {
+    line-height: 2;
+    height: 2em;
+    color: #3b3b3b;
+    text-shadow: 0 1px 0 #fff;
+    background-color: #dbdbdb;
+}
+
+.course-als-title-logo {
+    padding: 0 0 0 15px;
+    margin: 0 0 0 5px;
+    background: url(../img/m-b-arrow.png) no-repeat left center;
+}
+
+.course-als-content {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+
+/* 已发布状态 */
+
+.course-status-publish {
+    color: #009a48;
+    font-weight: 900;
+}
+
+
+/* 未发布,未分析状态 */
+
+.course-status-unpublish {
+    color: #ff0000;
+    font-weight: 900;
+}
+
+.course-format-explain {
+    margin: 10px 0 3px 0;
+}
+
+.course-format-explain label {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.form-upload-file,
+.show-file-info {
+    margin-top: 10px;
+}
+
+.exam-format-content {
+    margin-top: 20px;
+}
+
+.course-als-footer {
+    margin-top: 20px;
+}

@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>设置教师权限</title>
+    <link href="../css/cjy_common.css" rel="stylesheet" />
+    <link href="css/wxxwxx.css" rel="stylesheet" />
+    <!--公共css样式-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--加载jquery库-->
+    <script src="../js/cjy.js"></script>
+    <!--公共js样式-->
+    <!--以上3行必加-->
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+
+        </div>
+        <!--头部-->
+        <div class="lump clearfix">
+            <div class="main-content">
+                <div class="section-wrapper">
+                    <div class="section">
+                        <!--<h1 class="page-title">初二</h1>-->
+                        <!--大家在这里写各自的主体内容-->
+                        <p class="page_title">权限</p>
+                        <div class="content">
+                            <form action="http://chengjiyun.com/democz/?q=transcripts/config-permission" method="post" id="weike-transcripts-config-permission"
+                                accept-charset="UTF-8">
+                                <div>
+                                    <div class="container-inline">查看本年级考试分析结果：
+                                        <div class="form-item form-type-checkbox form-item-only-grade-head-can-view-exam">
+                                            <input type="checkbox" id="edit-only-grade-head-can-view-exam" name="only_grade_head_can_view_exam" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-grade-head-can-view-exam">年级领导 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-class-head-can-view-exam">
+                                            <input type="checkbox" id="edit-only-class-head-can-view-exam" name="only_class_head_can_view_exam" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-class-head-can-view-exam">班主任 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-subject-head-can-view-exam">
+                                            <input type="checkbox" id="edit-only-subject-head-can-view-exam" name="only_subject_head_can_view_exam" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-subject-head-can-view-exam">任课老师 </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="container-inline">查看其他年级考试分析结果：
+                                        <div class="form-item form-type-checkbox form-item-only-grade-head-can-view-other-exam">
+                                            <input type="checkbox" id="edit-only-grade-head-can-view-other-exam" name="only_grade_head_can_view_other_exam" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-grade-head-can-view-other-exam">年级领导 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-class-head-can-view-other-exam">
+                                            <input type="checkbox" id="edit-only-class-head-can-view-other-exam" name="only_class_head_can_view_other_exam" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-class-head-can-view-other-exam">班主任 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-subject-head-can-view-other-exam">
+                                            <input type="checkbox" id="edit-only-subject-head-can-view-other-exam" name="only_subject_head_can_view_other_exam" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-subject-head-can-view-other-exam">任课老师 </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="container-inline">查看非本人任教的班级页面：
+                                        <div class="form-item form-type-checkbox form-item-only-grade-head-can-view-other-class">
+                                            <input type="checkbox" id="edit-only-grade-head-can-view-other-class" name="only_grade_head_can_view_other_class" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-grade-head-can-view-other-class">年级领导 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-class-head-can-view-other-class">
+                                            <input type="checkbox" id="edit-only-class-head-can-view-other-class" name="only_class_head_can_view_other_class" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-class-head-can-view-other-class">班主任 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-subject-head-can-view-other-class">
+                                            <input type="checkbox" id="edit-only-subject-head-can-view-other-class" name="only_subject_head_can_view_other_class" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-subject-head-can-view-other-class">任课老师 </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="container-inline">查看班级页面中全部科目成绩：
+                                        <div class="form-item form-type-checkbox form-item-only-grade-head-can-view-all-score">
+                                            <input type="checkbox" id="edit-only-grade-head-can-view-all-score" name="only_grade_head_can_view_all_score" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-grade-head-can-view-all-score">年级领导 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-class-head-can-view-all-score">
+                                            <input type="checkbox" id="edit-only-class-head-can-view-all-score" name="only_class_head_can_view_all_score" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-class-head-can-view-all-score">班主任 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-subject-head-can-view-all-score">
+                                            <input type="checkbox" id="edit-only-subject-head-can-view-all-score" name="only_subject_head_can_view_all_score" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-subject-head-can-view-all-score">任课老师 </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="container-inline">查看班级学生详细分析页面：
+                                        <div class="form-item form-type-checkbox form-item-only-grade-head-can-view-student-page">
+                                            <input type="checkbox" id="edit-only-grade-head-can-view-student-page" name="only_grade_head_can_view_student_page" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-grade-head-can-view-student-page">年级领导 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-class-head-can-view-student-page">
+                                            <input type="checkbox" id="edit-only-class-head-can-view-student-page" name="only_class_head_can_view_student_page" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-class-head-can-view-student-page">班主任 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-subject-head-can-view-student-page">
+                                            <input type="checkbox" id="edit-only-subject-head-can-view-student-page" name="only_subject_head_can_view_student_page" value="1"
+                                                checked="checked" class="form-checkbox">                                            <label class="option" for="edit-only-subject-head-can-view-student-page">任课老师 </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="container-inline">创建年级考试分析：
+                                        <div class="form-item form-type-checkbox form-item-only-grade-head-can-create-exam">
+                                            <input type="checkbox" id="edit-only-grade-head-can-create-exam" name="only_grade_head_can_create_exam" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-grade-head-can-create-exam">年级领导 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-class-head-can-create-exam">
+                                            <input type="checkbox" id="edit-only-class-head-can-create-exam" name="only_class_head_can_create_exam" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-class-head-can-create-exam">班主任 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-subject-head-can-create-exam">
+                                            <input type="checkbox" id="edit-only-subject-head-can-create-exam" name="only_subject_head_can_create_exam" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-subject-head-can-create-exam">任课老师 </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="container-inline">查看已毕业年级考试分析：
+                                        <div class="form-item form-type-checkbox form-item-only-grade-head-can-open-graduate">
+                                            <input type="checkbox" id="edit-only-grade-head-can-open-graduate" name="only_grade_head_can_open_graduate" value="1" checked="checked"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-grade-head-can-open-graduate">年级领导 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-class-head-can-open-graduate">
+                                            <input type="checkbox" id="edit-only-class-head-can-open-graduate" name="only_class_head_can_open_graduate" value="1" class="form-checkbox">                                            <label class="option" for="edit-only-class-head-can-open-graduate">班主任 </label>
+
+                                        </div>
+                                        <div class="form-item form-type-checkbox form-item-only-subject-head-can-open-graduate">
+                                            <input type="checkbox" id="edit-only-subject-head-can-open-graduate" name="only_subject_head_can_open_graduate" value="1"
+                                                class="form-checkbox"> <label class="option"
+                                                for="edit-only-subject-head-can-open-graduate">任课老师 </label>
+
+                                        </div>
+                                    </div><br>
+                                    <div class="container-inline">
+                                        <div class="form-item form-type-checkbox form-item-only-class-head-can-reset-student-password">
+                                            <input type="checkbox" id="edit-only-class-head-can-reset-student-password" name="only_class_head_can_reset_student_password"
+                                                value="1" class="form-checkbox">                                            <label class="option" for="edit-only-class-head-can-reset-student-password">班主任可为本班学生重置密码 </label>
+
+                                        </div>
+                                        <div style="color: #888">(若不勾选，只有管理员可以为学生重置密码)</div>
+                                    </div><br>
+                                    <p style="color: #888">注意：权限设置是全校统一的，对所有年级同时生效。</p>
+                                    <h4><a href="http://chengjiyun.com/wiki/index.php?title=%E5%88%86%E6%9E%90%E7%BB%93%E6%9E%9C%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE"
+                                            target="_blank" style="text-decoration: none;">权限管理帮助说明</a></h4><input class="blue-button form-submit"
+                                        type="submit" id="edit-save" name="op" value="保存"><input type="hidden" name="form_build_id"
+                                        value="form-vxeUj9kXos_pgjMP65xcJLmeXk8ZZKSiQuSlEwETVYU">
+                                    <input type="hidden" name="form_token" value="g9-QQtdy4mOdBKp2R62_kiH2OqTTWC3vj9eOj2HGTVk">
+                                    <input type="hidden" name="form_id" value="weike_transcripts_config_permission">
+                                </div>
+                            </form>
+                        </div>
+
+
+
+
+
+                        <!--大家在这上面写各自的主体内容-->
+
+                    </div>
+                </div>
+            </div>
+            <!--主体内容-->
+            <div class="region">
+
+            </div>
+            <!--左边导航-->
+        </div>
+    </div>
+</body>
+
+</html>

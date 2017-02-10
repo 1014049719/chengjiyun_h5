@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>系统管理 - 新增学生账号</title>
+    <!--公共css样式-->
+    <link href="../css/cjy_common.css" rel="stylesheet"/>
+    <link href="css/systemManage.css" rel="stylesheet"/>
+
+    <!--加载jquery库-->
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--公=共js样式-->
+    <script src="../js/cjy.js"></script>
+    <script src="js/addStudentAccount.js"></script>
+</head>
+
+<body>
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+
+    </div>
+    <!--下部分-->
+    <div class="lump clearfix">
+        <!--主体内容-->
+        <div class="main-content">
+            <div class="section-wrapper">
+                <div class="section">
+                    <h1 class="page_title">系统管理 - 新增学生账号</h1>
+                    <div class="div_content">
+                        <div class="tabs">
+                            <ul class="tabs primary clearfix">
+                                <li class="active">
+                                    <a class="active" onclick="return Div_hideOrshow(this,'block-system-main');">
+                                        <span class="tab">批量新增学生</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a onclick="return Div_hideOrshow(this,'block-system-main-only');">
+                                        <span class="tab">新增单个学生</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="block-system-main" class=" block block-system first last odd"
+                             style="display: block;margin-top: 10px">
+                            <div class="content">
+                                <form class="block-progress" enctype="multipart/form-data"
+                                      action="/democz/?q=transcripts/user/grade/add-student/7" method="post"
+                                      id="weike-transcripts-user-grade-add-many-students" accept-charset="UTF-8">
+                                    <div>
+                                        当本年级需要批量新增学生用户时（例如有一批新的插班生）使用本功能。<br>
+                                        <div id="replace_textfield_div" style="margin-top: 10px">
+                                            <span class="triangle-item">1</span>下载学生名单模板：
+                                            <a href="http://chengjiyun.com/democz/sites/democz/modules/school_users/templates/new_grade.xls"
+                                               class="blue-btn">点击下载</a><br><br>
+                                        </div>
+
+                                        <div><span class="triangle-item">2</span>
+                                            填入需要批量新增账号的学生名单
+                                        </div>
+                                        <div style="margin-left:30px">
+                                            <img src="http://chengjiyun.com/democz/sites/democz/modules/weike_transcripts/image/add_students.jpg"><br>
+                                            注意： <br>
+                                            1. 学号不能和其他年级的学号重复；<br>
+                                            2. 学号应和成绩登分表中出现的学号对应；<br>
+                                            3. 班别需要和任课安排表中的班别对应；<br>
+                                            4. 密码填写你希望为该学生设置的初始密码，建议采用4位随机数字；<br>
+                                            如果留空不填，系统自动生成随机密码，请下载初始密码表，分发给学生。<br><br>
+                                        </div>
+                                        <span class="triangle-item">3</span>导入学生名单：
+                                        <div class="item-indent">
+                                            <div id="edit-students-file-ajax-wrapper" style="display: block;">
+                                                <div class="form-item form-type-managed-file form-item-students-file">
+                                                    <div id="edit-students-file" class="form-managed-file"><input
+                                                            id="edit-students-file-upload"
+                                                            name="files[students_file]" size="22" class="form-file"
+                                                            type="file"><input id="edit-students-file-upload-button"
+                                                                               name="students_file_upload_button"
+                                                                               value="上传"
+                                                                               class="form-submit ajax-processed"
+                                                                               type="submit"><input
+                                                            name="students_file[fid]" value="0" type="hidden">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="progress-button-group">
+                                                <input
+                                                    class="blue-btn "
+                                                    onclick="jQuery(&quot;#replace_textfield_div&quot;).hide();return true;"
+                                                    name="op" value="导入名单" type="submit">
+                                                <input
+                                                    class="border_blue_btn"
+                                                    style="margin-left: 15px"
+                                                    onclick="window.location.href=&quot;http://chengjiyun.com/democz?q=school-users/download-init-password/3207/eOJzhGugcaVd60CtoxCZ6vIJiCI3RpdWGT_2URX7x9g/3/7&quot;; return false;"
+                                                   name="op" value="下载初始密码表" type="submit">
+                                            </div>
+                                        </div>
+                                        <input name="form_build_id"
+                                               value="form-KSqs1TAvwEBlD_jgu6r7DBQk3ROvMCPTf4bbKfalBpw"
+                                               type="hidden">
+                                        <input name="form_token" value="v6vUX26rgbzatesYePKHk3Xdq2AVet7W6fv9fE85zfI"
+                                               type="hidden">
+                                        <input name="form_id" value="weike_transcripts_user_grade_add_many_students"
+                                               type="hidden">
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div><!-- /.block -->
+
+                        <div id="block-system-main-only" class="block block-system first last odd"
+                             style="display: none">
+                            <div class="content">
+                                <form action="/democz/?q=transcripts/user/grade/add-student/7/one" method="post"
+                                      id="weike-transcripts-user-grade-add-one-student" accept-charset="UTF-8">
+                                    <div style="margin-top: 10px">
+                                        <div class="form-item form-type-textfield form-item-id">
+                                            <label for="edit-id">账号 <span class="form-required"
+                                                                          title="此项必填。">*</span></label>
+                                            <input id="edit-id" name="id" value="" size="60" maxlength="128"
+                                                   class="form-text required" type="text">
+                                            <div class="description">（账号是用户唯一标识，不可更改，可取其身份证号或学号等）</div>
+                                        </div>
+                                        <div class="form-item form-type-textfield form-item-school-id">
+                                            <label for="edit-school-id">学号 <span class="form-required"
+                                                                                 title="此项必填。">*</span></label>
+                                            <input id="edit-school-id" name="school_id" value="" size="60"
+                                                   maxlength="128" class="form-text required" type="text">
+                                        </div>
+                                        <div class="form-item form-type-textfield form-item-name">
+                                            <label for="edit-name">姓名 <span class="form-required" title="此项必填。">*</span></label>
+                                            <input id="edit-name" name="name" value="" size="60" maxlength="128"
+                                                   class="form-text required" type="text">
+                                        </div>
+                                        <div class="form-item form-type-password-confirm form-item-password">
+                                            <div class="form-item form-type-password form-item-password-pass1 password-parent">
+                                                <div class="password-strength">
+                                                    <div class="password-strength-text" aria-live="assertive"></div>
+                                                    <div class="password-strength-title">密码强度：</div>
+                                                    <div class="password-indicator">
+                                                        <div class="indicator"></div>
+                                                    </div>
+                                                </div>
+                                                <label for="edit-password-pass1">密码 <span class="form-required"
+                                                                                          title="此项必填。">*</span></label>
+                                                <input class="password-field form-text required password-processed"
+                                                       id="edit-password-pass1" name="password[pass1]" size="60"
+                                                       maxlength="128" type="password">
+                                            </div>
+                                            <div class="form-item form-type-password form-item-password-pass2 confirm-parent">
+                                                <div class="password-confirm">密码匹配： <span></span></div>
+                                                <label for="edit-password-pass2">确认密码 <span class="form-required"
+                                                                                            title="此项必填。">*</span></label>
+                                                <input class="password-confirm form-text required"
+                                                       id="edit-password-pass2" name="password[pass2]" size="60"
+                                                       maxlength="128" type="password">
+                                            </div>
+                                            <div class="password-suggestions description" style="display: none;"></div>
+
+                                        </div>
+                                        <div class="form-item form-type-select form-item-sex">
+                                            <label for="edit-sex">性别 <span class="form-required" title="此项必填。">*</span></label>
+                                            <select id="edit-sex" name="sex" class="form-select required">
+                                                <option value="0">女</option>
+                                                <option value="1" selected="selected">男</option>
+                                            </select>
+                                        </div>
+                                        <input name="role" value="学生" type="hidden">
+                                        <input name="cid" value="0" type="hidden">
+                                        <div class="form-item form-type-select form-item-grade form-disabled">
+                                            <label for="edit-grade">年级 <span class="form-required"
+                                                                             title="此项必填。">*</span></label>
+                                            <select disabled="disabled" id="edit-grade" name="grade"
+                                                    class="form-select required">
+                                                <option value="7" selected="selected">初一</option>
+                                                <option value="8">初二</option>
+                                                <option value="9">初三</option>
+                                                <option value="0">其它</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-item form-type-textfield form-item-class">
+                                            <label for="edit-class">班别 <span class="form-required"
+                                                                             title="此项必填。">*</span></label>
+                                            <input id="edit-class" name="class" value="0" size="5" maxlength="128"
+                                                   class="form-text required" type="text">
+                                            <div class="description">（不属于某一个班的情况可填0）</div>
+                                        </div>
+                                        <input id="edit-add-one" name="op" value="新增" class="blue-btn" type="submit"><input
+                                            name="form_build_id"
+                                            value="form-Wogdr1dStjI6yYFwzXTkXDzwXbbecEoDfqAkoM7FLxM" type="hidden">
+                                        <input name="form_token" value="NJBt2WB3pxKOI1wa2scHvrn9JJ7nRQVwb4F-E96mELc"
+                                               type="hidden">
+                                        <input name="form_id" value="weike_transcripts_user_grade_add_one_student"
+                                               type="hidden">
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div><!-- /.block -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--左边导航-->
+        <div class="region">
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

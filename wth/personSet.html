@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>个人设置</title>
+    <!--公共css样式-->
+    <link href="../css/cjy_common.css" rel="stylesheet"/>
+
+    <link href="css/systemManage.css" rel="stylesheet"/>
+    <!--加载jquery库-->
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <!--公=共js样式-->
+    <script src="../js/handlebars-v4.0.5.js"></script>
+    <script src="../js/cjy.js"></script>
+</head>
+
+<body>
+<div class="warp">
+    <!--头部-->
+    <div class="header">
+
+    </div>
+    <!--下部分-->
+    <div class="lump clearfix">
+        <!--主体内容-->
+        <div class="personSet-main-content">
+            <div class="personSet-section-wrapper">
+                <div class="personSet-section">
+                    <h1 class="page_title">个人设置</h1>
+                    <div class="personSet-div-content">
+
+                        <form enctype="multipart/form-data" action="/democz/?q=setting/1068" method="post"
+                              id="school-users-edit" accept-charset="UTF-8">
+                            <div>
+                                <input name="uid" value="1068" type="hidden">
+                                <div class="form-item">
+                                    <label id="Label" for="edit-userid">账号 </label>
+                                    <input id="edit-userid" name="userid" value="20150101" size="60" maxlength="128"
+                                           class="form-text" type="text">
+                                </div>
+                                <div class="form-item">
+                                    <label for="edit-school-id">学号 </label>
+                                    <input id="edit-school-id" name="school_id" value="20150101" size="60"
+                                           maxlength="128" class="form-text" type="text">
+                                </div>
+                                <div class="form-item form-type-textfield form-item-year">
+                                    <label for="edit-year">入学年份 </label>
+                                    <input id="edit-year" name="year" value="2015" size="60" maxlength="128"
+                                           class="form-text" type="text">
+                                </div>
+                                <div class="form-item form-type-textfield form-item-cityexam-id">
+                                    <label for="edit-cityexam-id">考号 </label>
+                                    <input id="edit-cityexam-id" name="cityexam_id" value="" size="60" maxlength="128"
+                                           class="form-text" type="text">
+                                </div>
+                                <div class="form-item xinghaoLabel form-type-textfield form-item-name">
+                                    <label for="edit-name">姓名 <span class="form-required" title="此项必填。">*</span></label>
+                                    <input id="edit-name" name="name" value="何美艳" size="60" maxlength="128"
+                                           class="form-text required" type="text">
+                                </div>
+                                <div class="form-item form-type-textfield form-item-email">
+                                    <label for="edit-email">邮箱 <span class="form-required"
+                                                                     title="此项必填。">*</span></label>
+                                    <input id="edit-email" name="email" value="20150101@no.cn" size="60" maxlength="128"
+                                           class="form-text required" type="text">
+                                </div>
+                                <input name="reemail" value="20150101@no.cn" type="hidden">
+                                <div class="form-item form-type-select form-item-sex">
+                                    <label for="edit-sex">性别 <span class="form-required" title="此项必填。">*</span></label>
+                                    <select id="edit-sex" name="sex" class="form-select required">
+                                        <option value="-1" selected="selected">未知</option>
+                                        <option value="0">女</option>
+                                        <option value="1">男</option>
+                                    </select>
+                                </div>
+                                <div class="form-item form-type-select form-item-grade">
+                                    <label for="edit-grade">年级 <span class="form-required"
+                                                                     title="此项必填。">*</span></label>
+                                    <select id="edit-grade" name="grade" class="form-select required">
+                                        <option value="7" selected="selected">初一</option>
+                                        <option value="8">初二</option>
+                                        <option value="9">初三</option>
+                                        <option value="0">其它</option>
+                                    </select>
+                                </div>
+                                <div class="form-item form-type-textfield form-item-class">
+                                    <label for="edit-class">班别 <span class="form-required"
+                                                                     title="此项必填。">*</span></label>
+                                    <input id="edit-class" name="claass" value="1" size="5" maxlength="128"
+                                           class="form-text required" type="text">
+                                    <div class="description">（不属于某一个班的情况可填0）</div>
+                                </div>
+                                <div class="chartbox clearfix">
+                                    <p class="title">头像</p>
+                                    <div class="chart-contenter">
+                                        <div id="headimg" class="headimg">
+                                            <img src="../img/head.png" />
+                                        </div>
+                                        <span class="blue-btn uploadimg-box">上传图片<input name="file" type="file" id="fileupload"/></span>
+                                    </div>
+                                </div>
+                                <a class="blue-btn" id="set_user">更新</a>
+                                <input name="form_token" value="Qj5SF4gTQZRPFR7hW4OfyydH8-_AfDeygDzfdLEumGw"
+                                       type="hidden">
+                                <input name="form_id" value="school_users_edit" type="hidden">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+var studentid=url("student");
+alert(studentid)
+var post_data="para={\"student\":\""+studentid +"\"}"
+$.cjyAjax({
+    type: "post",
+    dataType: "json",
+    url: "data/analyse2.json",
+    data:post_data,
+    successCallback:function(msg){
+        console.log(msg.name)
+        $("#edit-userid").val(msg.name);
+    }
+})
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+{
+    "res": 1,
+    "msg": "成功",
+    "data": {
+        "name": "2013级初三下学期期末考试",
+        "student_num": 517,
+        "exam_time": 14681964713,
+        "add_time": 12524776656,
+        "exam_pk": "2013级初三下学期期中考试",
+        "look_num": 26,
+        "teacher_num": 22,
+        "teacher_looknum": 2,
+        "studentr_looknum": 3,
+        "show": [
+            "语文",
+            "数学"
+        ],
+        "list": [
+            {
+                "name": "参考人数",
+                "scorelist": [
+                    {
+                        "name": "语文",
+                        "num": "513"
+                    },
+                    {
+                        "name": "数学",
+                        "num": "413"
+                    }
+                ]
+            },
+            {
+                "name": "卷面分数",
+                "scorelist": [
+                    {
+                        "name": "语文",
+                        "num": "613"
+                    },
+                    {
+                        "name": "数学",
+                        "num": "713"
+                    }
+                ]
+            },
+            {
+                "name": "年级总均分",
+                "scorelist": [
+                    {
+                        "name": "语文",
+                        "num": "713"
+                    },
+                    {
+                        "name": "数学",
+                        "num": "913"
+                    }
+                ]
+            }
+        ]
+    }
+}

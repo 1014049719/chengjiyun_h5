@@ -1,0 +1,30 @@
+{
+    "res": 1,
+    "msg": "成功",
+    "data":{
+        "m_attr":[
+            {
+                "id": 10,
+                "m_greadname": "高一",
+                "m_student": 517,
+                "m_teacher": 1234564,
+                "m_test": 552
+            },
+            {
+                "id": 9,
+                "m_greadname": "高二",
+                "m_student": 517,
+                "m_teacher": 1234564,
+                "m_test": 552
+            },
+            {
+                "id": 9,
+                "m_greadname": "高san",
+
+                "m_student": "",
+                "m_teacher": "",
+                "m_test": ""
+            }
+        ]
+    }
+}
